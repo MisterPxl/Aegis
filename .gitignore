@@ -15,6 +15,7 @@
 !Samples~/**
 !UnityProject~/
 !UnityProject~/**
+UnityProject~/**/.DS_Store
 
 # UnityProject~ generated data
 UnityProject~/[Ll]ibrary/
