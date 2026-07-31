@@ -1,0 +1,14 @@
+{
+  "name": "com.misterpxl.aegis.helios",
+  "version": "0.1.0",
+  "displayName": "Aegis Helios Integration",
+  "description": "Optional Helios system info and bug report attachment for Aegis build validation snapshots.",
+  "unity": "6000.0",
+  "dependencies": {
+    "com.misterpxl.aegis": "0.1.0",
+    "com.misterpxl.helios-debugger": "1.0.0"
+  },
+  "author": {
+    "name": "Alexis Gomes"
+  }
+}

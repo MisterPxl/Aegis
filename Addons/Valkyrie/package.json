@@ -1,0 +1,14 @@
+{
+  "name": "com.misterpxl.aegis.valkyrie",
+  "version": "0.1.0",
+  "displayName": "Aegis Valkyrie Integration",
+  "description": "Optional Aegis rules for Valkyrie attributes and polymorphic collections.",
+  "unity": "6000.0",
+  "dependencies": {
+    "com.misterpxl.aegis": "0.1.0",
+    "com.misterpxl.valkyrie": "1.0.0"
+  },
+  "author": {
+    "name": "Alexis Gomes"
+  }
+}

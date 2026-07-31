@@ -1,0 +1,27 @@
+{
+  "name": "Aegis.Helios.Editor",
+  "rootNamespace": "MisterPxl.Aegis.HeliosIntegration.Editor",
+  "references": [
+    "Aegis.Editor",
+    "Aegis.Helios.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [
+    "AEGIS_HELIOS_AVAILABLE"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.misterpxl.helios-debugger",
+      "expression": "1.0.0",
+      "define": "AEGIS_HELIOS_AVAILABLE"
+    }
+  ],
+  "noEngineReferences": false
+}

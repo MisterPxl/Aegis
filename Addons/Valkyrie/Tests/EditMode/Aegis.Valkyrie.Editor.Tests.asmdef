@@ -1,0 +1,31 @@
+{
+  "name": "Aegis.Valkyrie.Editor.Tests",
+  "rootNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+  "references": [
+    "Aegis.Editor",
+    "Aegis.Valkyrie.Editor",
+    "Valkyrie.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "AEGIS_VALKYRIE_AVAILABLE"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.misterpxl.valkyrie",
+      "expression": "1.0.0",
+      "define": "AEGIS_VALKYRIE_AVAILABLE"
+    }
+  ],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

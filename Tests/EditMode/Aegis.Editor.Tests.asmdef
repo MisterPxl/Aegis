@@ -1,0 +1,21 @@
+{
+  "name": "Aegis.Editor.Tests",
+  "rootNamespace": "MisterPxl.Aegis.Tests",
+  "references": [
+    "Aegis.Editor"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

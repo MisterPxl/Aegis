@@ -1,0 +1,26 @@
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.user
+*.tmp
+
+# Keep UPM folders intentionally ending with "~" trackable even if a global
+# gitignore contains "*~".
+!Documentation~/
+!Documentation~/**
+!Samples~/
+!Samples~/**
+!UnityProject~/
+!UnityProject~/**
+
+# UnityProject~ generated data
+UnityProject~/[Ll]ibrary/
+UnityProject~/[Tt]emp/
+UnityProject~/[Oo]bj/
+UnityProject~/[Bb]uild/
+UnityProject~/[Bb]uilds/
+UnityProject~/[Ll]ogs/
+UnityProject~/[Uu]ser[Ss]ettings/

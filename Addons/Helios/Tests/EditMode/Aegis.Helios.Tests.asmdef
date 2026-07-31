@@ -1,0 +1,30 @@
+{
+  "name": "Aegis.Helios.Tests",
+  "rootNamespace": "MisterPxl.Aegis.HeliosIntegration.Tests",
+  "references": [
+    "Aegis.Helios.Runtime",
+    "HeliosDebugger.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "AEGIS_HELIOS_AVAILABLE"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.misterpxl.helios-debugger",
+      "expression": "1.0.0",
+      "define": "AEGIS_HELIOS_AVAILABLE"
+    }
+  ],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
