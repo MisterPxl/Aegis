@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.0
+
+- Fixed: scanning a scene already open in the editor no longer closes it (potential loss of unsaved work).
+- Fixed: `MissingObjectReferenceRule` now scans references nested in structs, serialized classes and collections.
+- Fixed: fallback rule discovery no longer leaks a new set of `ScriptableObject` instances on every run.
+- Fixed: `AegisCli.Run` now exits with code 3 for an unknown `-aegisProfile` instead of silently using the Interactive profile.
+- Fixed: JUnit `failures` attribute now matches the emitted `<failure>` elements.
+- Fixed: `Run Selected Rule` merges its results into the last report instead of overwriting it.
+- Fixed: built-in rules honour cancellation between assets, so `Cancel` responds without waiting for a full rule.
+- Fixed: Helios build snapshot reuses the build gate report instead of re-validating the whole project, and stale snapshots left by failed builds are cleaned up on domain reload.
+- Fixed: Helios runtime registration retries for 30 seconds when Helios initializes after scene load.
+- Changed: finding fingerprints are computed from stable anchors (rule, code, asset path, object id, property path) instead of the message, so renames and count changes no longer invalidate suppressions. Existing suppressions must be re-created.
+- Changed: dashboard fix buttons are disabled when no fix action is available (e.g. reports reloaded from disk).
+- Changed: addons moved to `Addons~` so the root package no longer embeds them; install them with `?path=/Addons~/<Name>`.
+
 ## 0.1.0
 
 - Initial Aegis validation framework.

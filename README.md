@@ -7,14 +7,14 @@ Aegis is an Editor-only Unity package for project health validation. It discover
 Add the package from Git:
 
 ```text
-https://github.com/MisterPxl/Aegis.git#v0.1.0
+https://github.com/MisterPxl/Aegis.git#v0.2.0
 ```
 
 Optional addons:
 
 ```text
-https://github.com/MisterPxl/Aegis.git?path=/Addons/Valkyrie#v0.1.0
-https://github.com/MisterPxl/Aegis.git?path=/Addons/Helios#v0.1.0
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Valkyrie#v0.2.0
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#v0.2.0
 ```
 
 ## Quick Start

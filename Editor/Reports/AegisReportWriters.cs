@@ -31,7 +31,15 @@ namespace MisterPxl.Aegis
 
             StringBuilder builder = new StringBuilder(4096);
             int tests = report.Rules.Count;
-            int failures = report.ErrorCount + report.WarningCount;
+
+            // Must match the number of <failure> elements emitted below.
+            int failures = 0;
+            for (int i = 0; i < report.Rules.Count; i++)
+            {
+                AegisRuleExecutionRecord record = report.Rules[i];
+                if (record.Status == AegisRuleExecutionStatus.Failed || record.FindingCount > 0)
+                    failures++;
+            }
             builder.Append("<?xml version=\"1.0\" encoding=\"utf-8\"?>").AppendLine();
             builder.Append("<testsuite name=\"Aegis\" tests=\"").Append(tests).Append("\" failures=\"").Append(failures).Append("\">").AppendLine();
 

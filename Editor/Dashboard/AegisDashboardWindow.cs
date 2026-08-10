@@ -16,6 +16,8 @@ namespace MisterPxl.Aegis
         private TextField _search;
         private EnumField _severity;
         private ListView _list;
+        private Button _fixButton;
+        private Button _fixSafeButton;
         private AegisFinding _selectedFinding;
 
         [MenuItem("Tools/Aegis/Project Health")]
@@ -77,17 +79,17 @@ namespace MisterPxl.Aegis
             Button selectedButton = new Button(RunSelectedRule) { text = "Run Selected Rule" };
             Button exportButton = new Button(ExportJson) { text = "Export JSON" };
             Button pingButton = new Button(() => PingFinding(_selectedFinding)) { text = "Ping" };
-            Button fixButton = new Button(FixSelected) { text = "Fix Selected" };
+            _fixButton = new Button(FixSelected) { text = "Fix Selected" };
             Button suppressButton = new Button(SuppressSelected) { text = "Suppress Selected" };
-            Button fixSafeButton = new Button(FixAllSafe) { text = "Fix All Safe" };
+            _fixSafeButton = new Button(FixAllSafe) { text = "Fix All Safe" };
             toolbar.Add(runButton);
             toolbar.Add(cancelButton);
             toolbar.Add(selectedButton);
             toolbar.Add(exportButton);
             toolbar.Add(pingButton);
-            toolbar.Add(fixButton);
+            toolbar.Add(_fixButton);
             toolbar.Add(suppressButton);
-            toolbar.Add(fixSafeButton);
+            toolbar.Add(_fixSafeButton);
 
             _summary = new Label();
             _summary.style.unityFontStyleAndWeight = FontStyle.Bold;
@@ -196,11 +198,38 @@ namespace MisterPxl.Aegis
             if (selectedRule == null)
                 return;
 
+            List<AegisFinding> ruleFindings = new List<AegisFinding>();
+            List<AegisRuleExecutionRecord> ruleRecords = new List<AegisRuleExecutionRecord>();
+            AegisSettings settings = AegisSettings.instance;
+            AegisValidationContext context = new AegisValidationContext(settings.GetProfile("Interactive"));
+            AegisRunner.ExecuteRule(selectedRule, context, ruleFindings, ruleRecords);
+
+            // Merge into the previous report so rerunning one rule keeps the other findings.
             List<AegisFinding> findings = new List<AegisFinding>();
             List<AegisRuleExecutionRecord> records = new List<AegisRuleExecutionRecord>();
-            AegisValidationContext context = new AegisValidationContext(AegisSettings.instance.GetProfile("Interactive"));
-            AegisRunner.ExecuteRule(selectedRule, context, findings, records);
-            _report = new AegisValidationReport(context.Profile.Name, 0d, findings, records);
+            if (_report != null)
+            {
+                for (int i = 0; i < _report.Findings.Count; i++)
+                {
+                    if (!string.Equals(_report.Findings[i].RuleId, selectedRule.RuleId, StringComparison.OrdinalIgnoreCase))
+                        findings.Add(_report.Findings[i]);
+                }
+
+                for (int i = 0; i < _report.Rules.Count; i++)
+                {
+                    if (!string.Equals(_report.Rules[i].RuleId, selectedRule.RuleId, StringComparison.OrdinalIgnoreCase))
+                        records.Add(_report.Rules[i]);
+                }
+            }
+
+            for (int i = 0; i < ruleFindings.Count; i++)
+            {
+                if (!settings.IsSuppressed(ruleFindings[i]))
+                    findings.Add(ruleFindings[i]);
+            }
+
+            records.AddRange(ruleRecords);
+            _report = new AegisValidationReport(context.Profile.Name, _report != null ? _report.DurationMs : 0d, findings, records);
             AegisReportStore.SaveLastReport(_report);
             RefreshFilter();
         }
@@ -311,6 +340,33 @@ namespace MisterPxl.Aegis
 
             _list?.RefreshItems();
             UpdateSummary();
+            UpdateFixButtons();
+        }
+
+        private void UpdateFixButtons()
+        {
+            if (_fixButton == null || _fixSafeButton == null)
+                return;
+
+            // Fix actions are not serialized, so reports reloaded from disk have none;
+            // disabling the buttons makes that state visible instead of silently doing nothing.
+            _fixButton.SetEnabled(_selectedFinding != null && _selectedFinding.FixAction != null);
+
+            bool hasSafeFix = false;
+            if (_report != null)
+            {
+                for (int i = 0; i < _report.Findings.Count; i++)
+                {
+                    AegisFinding finding = _report.Findings[i];
+                    if (finding.FixAction != null && finding.FixAction.Safety == AegisFixSafety.Safe)
+                    {
+                        hasSafeFix = true;
+                        break;
+                    }
+                }
+            }
+
+            _fixSafeButton.SetEnabled(hasSafeFix);
         }
 
         private static bool MatchesSearch(AegisFinding finding, string search)
@@ -356,6 +412,7 @@ namespace MisterPxl.Aegis
             }
 
             UpdateDetails();
+            UpdateFixButtons();
         }
 
         private void OnItemsChosen(IEnumerable<object> chosen)

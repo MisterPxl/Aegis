@@ -50,6 +50,7 @@ namespace MisterPxl.Aegis.HeliosIntegration
     public static class AegisHeliosBootstrap
     {
         private const string SnapshotResourcePath = "AegisValidationSnapshot";
+        private const float RegistrationTimeoutSeconds = 30f;
         private static bool _registered;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -58,8 +59,25 @@ namespace MisterPxl.Aegis.HeliosIntegration
 #if HELIOS_DEBUGGER_DISABLE
             return;
 #else
-            if (_registered || !Helios.IsInitialized)
+            if (_registered || TryRegister())
                 return;
+
+            // Helios may initialize after scene load; keep retrying for a while
+            // instead of giving up on the first attempt.
+            GameObject host = new GameObject("AegisHeliosBootstrap");
+            host.hideFlags = HideFlags.HideAndDontSave;
+            UnityEngine.Object.DontDestroyOnLoad(host);
+            host.AddComponent<AegisHeliosRegistrationPoller>();
+#endif
+        }
+
+        private static bool TryRegister()
+        {
+            if (_registered)
+                return true;
+
+            if (!Helios.IsInitialized)
+                return false;
 
             AegisValidationSnapshot snapshot = LoadSnapshot();
             Helios.RegisterSystemInfoProvider(new AegisHeliosSystemInfoProvider(snapshot));
@@ -70,7 +88,19 @@ namespace MisterPxl.Aegis.HeliosIntegration
             }
 
             _registered = true;
-#endif
+            return true;
+        }
+
+        private sealed class AegisHeliosRegistrationPoller : MonoBehaviour
+        {
+            private float _elapsedSeconds;
+
+            private void Update()
+            {
+                _elapsedSeconds += Time.unscaledDeltaTime;
+                if (TryRegister() || _elapsedSeconds >= RegistrationTimeoutSeconds)
+                    Destroy(gameObject);
+            }
         }
 
         private static AegisValidationSnapshot LoadSnapshot()

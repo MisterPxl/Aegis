@@ -40,6 +40,30 @@ namespace MisterPxl.Aegis
             return InteractiveProfile.Clone();
         }
 
+        public bool TryGetProfile(string profileName, out AegisValidationProfile profile)
+        {
+            if (string.Equals(profileName, "Interactive", StringComparison.OrdinalIgnoreCase))
+            {
+                profile = InteractiveProfile.Clone();
+                return true;
+            }
+
+            if (string.Equals(profileName, "Build", StringComparison.OrdinalIgnoreCase))
+            {
+                profile = BuildProfile.Clone();
+                return true;
+            }
+
+            if (string.Equals(profileName, "CI", StringComparison.OrdinalIgnoreCase))
+            {
+                profile = CiProfile.Clone();
+                return true;
+            }
+
+            profile = null;
+            return false;
+        }
+
         public bool IsSuppressed(AegisFinding finding)
         {
             if (finding == null)

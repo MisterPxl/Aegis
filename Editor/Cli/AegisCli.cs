@@ -17,7 +17,13 @@ namespace MisterPxl.Aegis
                 string jsonPath = GetArg(args, "-aegisJson", "Library/Aegis/aegis-report.json");
                 string junitPath = GetArg(args, "-aegisJUnit", "Library/Aegis/aegis-report.xml");
 
-                AegisValidationProfile profile = AegisSettings.instance.GetProfile(profileName);
+                if (!AegisSettings.instance.TryGetProfile(profileName, out AegisValidationProfile profile))
+                {
+                    Debug.LogError($"Aegis: unknown profile '{profileName}'. Expected 'Interactive', 'Build' or 'CI'.");
+                    exitCode = AegisExitCode.ConfigurationError;
+                    return;
+                }
+
                 AegisRunResult result = new AegisRunner().Run(profile);
                 if (!result.Success || result.Report == null)
                 {

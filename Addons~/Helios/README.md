@@ -3,7 +3,7 @@
 Optional package:
 
 ```text
-https://github.com/MisterPxl/Aegis.git?path=/Addons/Helios#v0.1.0
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#v0.2.0
 ```
 
 During validated builds, the editor side generates a minimal `AegisValidationSnapshot` resource. At runtime, the Helios side exposes that snapshot through System Info and attaches the same JSON to bug reports.

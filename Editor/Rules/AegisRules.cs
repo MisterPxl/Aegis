@@ -76,40 +76,54 @@ namespace MisterPxl.Aegis
                 evaluator(path, assets[assetIndex], sink);
         }
 
-        private static void EvaluateSceneObjects(string path, IAegisFindingSink sink, AegisProjectObjectEvaluator evaluator)
+        protected static void VisitSceneGameObjects(string path, Action<GameObject> visitor)
         {
-            Scene scene = default;
+            Scene existingScene = SceneManager.GetSceneByPath(path);
+            bool wasLoaded = existingScene.IsValid() && existingScene.isLoaded;
+            bool wasInHierarchy = existingScene.IsValid();
+            Scene scene = wasLoaded ? existingScene : EditorSceneManager.OpenScene(path, OpenSceneMode.Additive);
             try
             {
-                scene = EditorSceneManager.OpenScene(path, OpenSceneMode.Additive);
                 GameObject[] roots = scene.GetRootGameObjects();
                 for (int i = 0; i < roots.Length; i++)
                 {
                     foreach (GameObject go in EnumerateHierarchy(roots[i]))
-                        EvaluateGameObjectAndComponents(path, go, sink, evaluator);
+                        visitor(go);
                 }
             }
             finally
             {
-                if (scene.IsValid())
-                    EditorSceneManager.CloseScene(scene, true);
+                // Never close a scene the user already had loaded, and keep pre-existing
+                // hierarchy entries (valid but unloaded scenes) in the hierarchy.
+                if (!wasLoaded && scene.IsValid())
+                    EditorSceneManager.CloseScene(scene, !wasInHierarchy);
             }
         }
 
-        private static void EvaluatePrefabObjects(string path, IAegisFindingSink sink, AegisProjectObjectEvaluator evaluator)
+        protected static void VisitPrefabGameObjects(string path, Action<GameObject> visitor)
         {
             GameObject root = null;
             try
             {
                 root = PrefabUtility.LoadPrefabContents(path);
                 foreach (GameObject go in EnumerateHierarchy(root))
-                    EvaluateGameObjectAndComponents(path, go, sink, evaluator);
+                    visitor(go);
             }
             finally
             {
                 if (root != null)
                     PrefabUtility.UnloadPrefabContents(root);
             }
+        }
+
+        private static void EvaluateSceneObjects(string path, IAegisFindingSink sink, AegisProjectObjectEvaluator evaluator)
+        {
+            VisitSceneGameObjects(path, go => EvaluateGameObjectAndComponents(path, go, sink, evaluator));
+        }
+
+        private static void EvaluatePrefabObjects(string path, IAegisFindingSink sink, AegisProjectObjectEvaluator evaluator)
+        {
+            VisitPrefabGameObjects(path, go => EvaluateGameObjectAndComponents(path, go, sink, evaluator));
         }
 
         private static void EvaluateGameObjectAndComponents(
@@ -143,47 +157,31 @@ namespace MisterPxl.Aegis
         {
             string[] prefabs = FindPrefabPaths(context);
             for (int i = 0; i < prefabs.Length; i++)
+            {
+                if (context.IsCancellationRequested)
+                    return;
+
                 EvaluatePrefab(prefabs[i], sink);
+            }
 
             string[] scenes = FindScenePaths(context);
             for (int i = 0; i < scenes.Length; i++)
+            {
+                if (context.IsCancellationRequested)
+                    return;
+
                 EvaluateScene(scenes[i], sink);
+            }
         }
 
         private void EvaluatePrefab(string path, IAegisFindingSink sink)
         {
-            GameObject root = null;
-            try
-            {
-                root = PrefabUtility.LoadPrefabContents(path);
-                foreach (GameObject go in EnumerateHierarchy(root))
-                    AddIfMissing(path, go, sink);
-            }
-            finally
-            {
-                if (root != null)
-                    PrefabUtility.UnloadPrefabContents(root);
-            }
+            VisitPrefabGameObjects(path, go => AddIfMissing(path, go, sink));
         }
 
         private void EvaluateScene(string path, IAegisFindingSink sink)
         {
-            Scene scene = default;
-            try
-            {
-                scene = EditorSceneManager.OpenScene(path, OpenSceneMode.Additive);
-                GameObject[] roots = scene.GetRootGameObjects();
-                for (int i = 0; i < roots.Length; i++)
-                {
-                    foreach (GameObject go in EnumerateHierarchy(roots[i]))
-                        AddIfMissing(path, go, sink);
-                }
-            }
-            finally
-            {
-                if (scene.IsValid())
-                    EditorSceneManager.CloseScene(scene, true);
-            }
+            VisitSceneGameObjects(path, go => AddIfMissing(path, go, sink));
         }
 
         private void AddIfMissing(string path, GameObject go, IAegisFindingSink sink)
@@ -227,7 +225,8 @@ namespace MisterPxl.Aegis
             bool enterChildren = true;
             while (iterator.NextVisible(enterChildren))
             {
-                enterChildren = false;
+                // Keep descending so references nested in structs, classes and collections are scanned.
+                enterChildren = true;
                 if (iterator.propertyType != SerializedPropertyType.ObjectReference)
                     continue;
 
@@ -354,7 +353,12 @@ namespace MisterPxl.Aegis
         {
             string[] paths = FindPrefabPaths(context);
             for (int i = 0; i < paths.Length; i++)
+            {
+                if (context.IsCancellationRequested)
+                    return;
+
                 EvaluatePrefab(paths[i], sink);
+            }
         }
 
         private void EvaluatePrefab(string path, IAegisFindingSink sink)
@@ -409,6 +413,9 @@ namespace MisterPxl.Aegis
             string[] paths = context.FindAssetPaths("t:ScriptableObject", "Assets", "Packages");
             for (int i = 0; i < paths.Length; i++)
             {
+                if (context.IsCancellationRequested)
+                    return;
+
                 UnityEngine.Object[] assets = AssetDatabase.LoadAllAssetsAtPath(paths[i]);
                 for (int assetIndex = 0; assetIndex < assets.Length; assetIndex++)
                 {

@@ -97,7 +97,14 @@ namespace MisterPxl.Aegis
             _propertyPath = propertyPath ?? string.Empty;
             _code = code ?? string.Empty;
             _fixAction = fixAction;
-            _fingerprint = AegisFingerprint.Compute(_ruleId, _assetPath, _globalObjectId, _propertyPath, _code, _message);
+
+            // Anchored findings hash only stable identity fields so volatile messages
+            // (object names, counts) do not invalidate suppressions. Findings without
+            // any anchor fall back to the message to stay distinguishable.
+            bool hasAnchor = _assetPath.Length > 0 || _globalObjectId.Length > 0 || _propertyPath.Length > 0;
+            _fingerprint = hasAnchor
+                ? AegisFingerprint.Compute(_ruleId, _code, _assetPath, _globalObjectId, _propertyPath)
+                : AegisFingerprint.Compute(_ruleId, _code, _message);
         }
 
         public string RuleId => _ruleId;
@@ -522,7 +529,7 @@ namespace MisterPxl.Aegis
 
     public static class AegisPackageInfo
     {
-        public const string Version = "0.1.0";
+        public const string Version = "0.2.0";
         public const string ReportFolder = "Library/Aegis";
         public const string LastReportPath = "Library/Aegis/last-report.json";
     }

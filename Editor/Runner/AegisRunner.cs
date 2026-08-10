@@ -9,6 +9,10 @@ namespace MisterPxl.Aegis
 {
     public static class AegisRuleDiscovery
     {
+        // Fallback rules are cached so repeated discovery does not accumulate
+        // HideAndDontSave instances that Unity never garbage-collects.
+        private static readonly Dictionary<Type, AegisRuleAsset> FallbackRuleCache = new Dictionary<Type, AegisRuleAsset>();
+
         public static List<AegisRuleAsset> DiscoverRules()
         {
             List<AegisRuleAsset> rules = new List<AegisRuleAsset>();
@@ -46,8 +50,13 @@ namespace MisterPxl.Aegis
                     return;
             }
 
-            TRule rule = ScriptableObject.CreateInstance<TRule>();
-            rule.hideFlags = HideFlags.HideAndDontSave;
+            if (!FallbackRuleCache.TryGetValue(typeof(TRule), out AegisRuleAsset rule) || rule == null)
+            {
+                rule = ScriptableObject.CreateInstance<TRule>();
+                rule.hideFlags = HideFlags.HideAndDontSave;
+                FallbackRuleCache[typeof(TRule)] = rule;
+            }
+
             rules.Add(rule);
         }
 
