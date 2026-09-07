@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Prepare the Helios integration 0.3.0 candidate for Helios 2.4.0 lifecycle notifications.
+- Replace the 30-second poller with a disposable passive registration that survives service restart and resets between Play sessions.
+- Remove only the integration’s own provider and attachment on shutdown/disposal; add late-start, restart, teardown and no-domain-reload regressions.
+
 - Fix nested Valkyrie `[Required]` validation by sharing inspector presence checks and messages, with serialized property paths and cycle-safe traversal.
 - Require the Valkyrie 1.5 nested-inspector Editor helpers; add parity, inheritance, collection and asset reimport regressions.
 

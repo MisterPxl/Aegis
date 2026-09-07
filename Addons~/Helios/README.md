@@ -6,7 +6,7 @@ with the next release; existing published tags retain their earlier labels.
 
 ## Compatibility (unreleased)
 
-The working integration targets Helios Debugger **2.3.1 through 2.x** and uses
+The working integration targets Helios Debugger **2.4.0 through 2.x** and uses
 `HeliosReportArtifact` with the `application/json` MIME type. Helios 1.x is no
 longer supported by this working version. The published `v0.2.0` URL below still
 contains the earlier integration; these changes require a new integration release.
@@ -38,7 +38,7 @@ Helios materializer and keeps its captured values when the source snapshot chang
 The manifest declares these package versions:
 
 - `com.misterpxl.aegis`: `0.2.0`.
-- `com.misterpxl.helios-debugger`: `2.3.1`.
+- `com.misterpxl.helios-debugger`: `2.4.0`.
 
 Install the Astra base packages explicitly in the consumer manifest, using the
 Git URLs from their READMEs. Git packages are not fetched transitively from
@@ -51,3 +51,16 @@ its suites in Unity Test Runner.
 
 Remove project components, assets or code that reference this integration before
 removing it through Package Manager. The base packages can remain installed.
+
+## Runtime lifecycle (0.3.0 candidate)
+
+The working integration is version 0.3.0 and requires Helios 2.4.0. Bootstrap
+registers a passive observer before the first scene; it does not create a polling
+GameObject, impose a timeout or initialize Helios. Each service generation receives
+one provider and, when a snapshot exists, one JSON artifact. Shutdown removes those
+exact instances; restarting Helios attaches them to the new generation.
+
+`AegisHeliosBootstrap.Register()` replaces the previous bootstrap registration;
+`Stop()` removes it. For custom compositions, own an `AegisHeliosRegistration`
+and dispose it when that composition ends. Session reset and BeforeSceneLoad
+registration cover repeated Play sessions with domain reload disabled.

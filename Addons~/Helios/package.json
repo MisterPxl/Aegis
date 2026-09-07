@@ -1,12 +1,12 @@
 {
   "name": "com.misterpxl.aegis.helios",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "displayName": "Astra Aegis — Helios Integration",
   "description": "Optional Helios system info and bug report attachment for Aegis build validation snapshots.",
   "unity": "6000.0",
   "dependencies": {
     "com.misterpxl.aegis": "0.2.0",
-    "com.misterpxl.helios-debugger": "2.3.1"
+    "com.misterpxl.helios-debugger": "2.4.0"
   },
   "author": {
     "name": "Alexis Gomes"

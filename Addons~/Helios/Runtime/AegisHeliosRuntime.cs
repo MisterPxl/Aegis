@@ -55,59 +55,67 @@ namespace MisterPxl.Aegis.HeliosIntegration
         }
     }
 
+    /// <summary>Owns Aegis registrations across Helios service generations without booting Helios.</summary>
+    public sealed class AegisHeliosRegistration : IDisposable
+    {
+        private readonly AegisHeliosSystemInfoProvider _provider;
+        private readonly HeliosReportArtifact _artifact;
+        private HeliosService _service;
+        private bool _disposed;
+
+        public AegisHeliosRegistration(AegisValidationSnapshot snapshot)
+        {
+            _provider = new AegisHeliosSystemInfoProvider(snapshot);
+            _artifact = snapshot?.CreateReportArtifact();
+            Helios.Initialized += Attach;
+            Helios.ShuttingDown += Detach;
+            if (Helios.TryGetService(out var service)) Attach(service);
+        }
+
+        private void Attach(HeliosService service)
+        {
+            if (_disposed || ReferenceEquals(_service, service)) return;
+            if (_service != null) Detach(_service);
+            _service = service;
+            service.SystemInfo.RegisterProvider(_provider);
+            if (_artifact != null) service.Reporting.AddAttachment(_artifact);
+        }
+
+        private void Detach(HeliosService service)
+        {
+            if (!ReferenceEquals(_service, service)) return;
+            _service = null;
+            service.SystemInfo.UnregisterProvider(_provider);
+            if (_artifact != null) service.Reporting.RemoveAttachment(_artifact);
+        }
+
+        public void Dispose()
+        {
+            if (_disposed) return;
+            _disposed = true;
+            Helios.Initialized -= Attach;
+            Helios.ShuttingDown -= Detach;
+            if (_service != null) Detach(_service);
+        }
+    }
+
     public static class AegisHeliosBootstrap
     {
         private const string SnapshotResourcePath = "AegisValidationSnapshot";
-        private const float RegistrationTimeoutSeconds = 30f;
-        private static bool _registered;
+        private static AegisHeliosRegistration _registration;
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        private static void RegisterWhenHeliosExists()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void Register()
         {
-#if HELIOS_DEBUGGER_DISABLE
-            return;
-#else
-            if (_registered || TryRegister())
-                return;
-
-            // Helios may initialize after scene load; keep retrying for a while
-            // instead of giving up on the first attempt.
-            GameObject host = new GameObject("AegisHeliosBootstrap");
-            host.hideFlags = HideFlags.HideAndDontSave;
-            UnityEngine.Object.DontDestroyOnLoad(host);
-            host.AddComponent<AegisHeliosRegistrationPoller>();
-#endif
+            Stop();
+            _registration = new AegisHeliosRegistration(LoadSnapshot());
         }
 
-        private static bool TryRegister()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        public static void Stop()
         {
-            if (_registered)
-                return true;
-
-            if (!Helios.IsInitialized)
-                return false;
-
-            AegisValidationSnapshot snapshot = LoadSnapshot();
-            Helios.RegisterSystemInfoProvider(new AegisHeliosSystemInfoProvider(snapshot));
-            if (snapshot != null)
-            {
-                Helios.AddReportAttachment(snapshot.CreateReportArtifact());
-            }
-
-            _registered = true;
-            return true;
-        }
-
-        private sealed class AegisHeliosRegistrationPoller : MonoBehaviour
-        {
-            private float _elapsedSeconds;
-
-            private void Update()
-            {
-                _elapsedSeconds += Time.unscaledDeltaTime;
-                if (TryRegister() || _elapsedSeconds >= RegistrationTimeoutSeconds)
-                    Destroy(gameObject);
-            }
+            _registration?.Dispose();
+            _registration = null;
         }
 
         private static AegisValidationSnapshot LoadSnapshot()
