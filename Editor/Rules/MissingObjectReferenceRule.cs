@@ -1,9 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [CreateAssetMenu(fileName = "MissingObjectReferenceRule", menuName = "Astra/Aegis/Rules/Missing Object Reference")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "MissingObjectReferenceRule")]
+    [AegisRuleIdentity("MisterPxl.Aegis.MissingObjectReferenceRule")]
     public sealed class MissingObjectReferenceRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

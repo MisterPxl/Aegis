@@ -1,10 +1,12 @@
-using MisterPxl.Aegis;
+using Astra.Aegis;
 using UnityEditor;
 using UnityEngine;
 
-namespace Aegis.Samples
+namespace Astra.Aegis.Samples
 {
     [CreateAssetMenu(fileName = "SceneNamingRule", menuName = "Astra/Aegis/Samples/Scene Naming Rule")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "Aegis.Samples", sourceClassName: "SceneNamingRule")]
+    [AegisRuleIdentity("Aegis.Samples.SceneNamingRule")]
     public sealed class SceneNamingRule : AegisRuleAsset
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

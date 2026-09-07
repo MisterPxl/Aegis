@@ -1,0 +1,12 @@
+{
+    "_ruleId": "MisterPxl.Aegis.MissingObjectReferenceRule",
+    "_ruleName": "Legacy rule",
+    "_severity": 1,
+    "_message": "Legacy finding",
+    "_details": "",
+    "_assetPath": "Assets/AegisMigrationFixture/Cycle.asset",
+    "_globalObjectId": "",
+    "_propertyPath": "HiddenReference",
+    "_code": "Aegis.Migration.Identity",
+    "_fingerprint": "7552282192fb202bf4c2d54b37d2f2d896ecea3dfbe1abdc698eec4d315b9f55"
+}

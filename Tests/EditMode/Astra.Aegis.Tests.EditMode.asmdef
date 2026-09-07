@@ -1,8 +1,8 @@
 {
-  "name": "Aegis.Editor.Tests",
-  "rootNamespace": "MisterPxl.Aegis.Tests",
+  "name": "Astra.Aegis.Tests.EditMode",
+  "rootNamespace": "Astra.Aegis.Tests",
   "references": [
-    "Aegis.Editor"
+    "Astra.Aegis.Editor"
   ],
   "includePlatforms": [
     "Editor"

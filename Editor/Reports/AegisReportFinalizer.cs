@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisReportFinalizer")]
     public static class AegisReportFinalizer
     {
         public static AegisValidationReport ApplySuppressions(

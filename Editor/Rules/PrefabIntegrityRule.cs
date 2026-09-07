@@ -2,9 +2,11 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [CreateAssetMenu(fileName = "PrefabIntegrityRule", menuName = "Astra/Aegis/Rules/Prefab Integrity")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "PrefabIntegrityRule")]
+    [AegisRuleIdentity("MisterPxl.Aegis.PrefabIntegrityRule")]
     public sealed class PrefabIntegrityRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

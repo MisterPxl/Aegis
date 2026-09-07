@@ -1,14 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using MisterPxl.Aegis;
+using Astra.Aegis;
 using UnityEditor;
 using UnityEngine;
 using Valkyrie;
 
-namespace MisterPxl.Aegis.ValkyrieIntegration
+namespace Astra.Aegis.Integrations.Valkyrie
 {
     [CreateAssetMenu(fileName = "ValkyrieManagedReferenceRule", menuName = "Astra/Aegis/Valkyrie/Managed Reference Rule")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration", "Aegis.Valkyrie.Editor", "ValkyrieManagedReferenceRuleAsset")]
+    [AegisRuleIdentity("MisterPxl.Aegis.ValkyrieIntegration.ValkyrieManagedReferenceRuleAsset")]
     public sealed class ValkyrieManagedReferenceRuleAsset : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

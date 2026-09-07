@@ -7,8 +7,9 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisSeverity")]
     public enum AegisSeverity
     {
         Info = 0,
@@ -16,6 +17,7 @@ namespace MisterPxl.Aegis
         Error = 2
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisFixSafety")]
     public enum AegisFixSafety
     {
         Safe = 0,
@@ -23,6 +25,7 @@ namespace MisterPxl.Aegis
         Destructive = 2
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisRuleExecutionStatus")]
     public enum AegisRuleExecutionStatus
     {
         Passed = 0,
@@ -31,6 +34,7 @@ namespace MisterPxl.Aegis
         Failed = 3
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisExitCode")]
     public enum AegisExitCode
     {
         Success = 0,
@@ -39,11 +43,13 @@ namespace MisterPxl.Aegis
         InternalError = 4
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "IAegisFindingSink")]
     public interface IAegisFindingSink
     {
         void Add(AegisFinding finding);
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "IAegisFixAction")]
     public interface IAegisFixAction
     {
         string Label { get; }
@@ -51,12 +57,14 @@ namespace MisterPxl.Aegis
         AegisFixResult Execute(AegisFinding finding, AegisValidationContext context);
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "IAegisKeyProvider")]
     public interface IAegisKeyProvider
     {
         string AegisKey { get; }
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisFinding")]
     public sealed class AegisFinding
     {
         [SerializeField] private string _ruleId;
@@ -123,6 +131,7 @@ namespace MisterPxl.Aegis
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisRuleExecutionRecord")]
     public sealed class AegisRuleExecutionRecord
     {
         [SerializeField] private string _ruleId;
@@ -161,6 +170,7 @@ namespace MisterPxl.Aegis
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisValidationReport")]
     public sealed class AegisValidationReport
     {
         [SerializeField] private string _generatedUtc;
@@ -231,6 +241,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisFixResult")]
     public sealed class AegisFixResult
     {
         private AegisFixResult(bool success, string message, Exception exception)
@@ -255,6 +266,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisRunResult")]
     public sealed class AegisRunResult
     {
         private AegisRunResult(bool success, string message, AegisValidationReport report, Exception exception)
@@ -291,6 +303,7 @@ namespace MisterPxl.Aegis
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisValidationProfile")]
     public sealed class AegisValidationProfile
     {
         [SerializeField] private string _name = "Interactive";
@@ -401,6 +414,7 @@ namespace MisterPxl.Aegis
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisSuppression")]
     public sealed class AegisSuppression
     {
         [SerializeField] private string _fingerprint;
@@ -437,6 +451,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisValidationContext")]
     public sealed class AegisValidationContext
     {
         private readonly Dictionary<string, string[]> _assetSearchCache = new Dictionary<string, string[]>();
@@ -477,6 +492,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisRuleAsset")]
     public abstract class AegisRuleAsset : ScriptableObject
     {
         [SerializeField] private string _displayName;
@@ -497,7 +513,8 @@ namespace MisterPxl.Aegis
                         return guid;
                 }
 
-                return GetType().FullName;
+                var identity = (AegisRuleIdentityAttribute)Attribute.GetCustomAttribute(GetType(), typeof(AegisRuleIdentityAttribute), false);
+                return identity != null ? identity.Id : GetType().FullName;
             }
         }
 
@@ -533,6 +550,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisFindingSink")]
     public sealed class AegisFindingSink : IAegisFindingSink
     {
         private readonly List<AegisFinding> _findings;
@@ -549,13 +567,15 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisPackageInfo")]
     public static class AegisPackageInfo
     {
-        public const string Version = "0.2.0";
+        public const string Version = "1.0.0";
         public const string ReportFolder = "Library/Aegis";
         public const string LastReportPath = "Library/Aegis/last-report.json";
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisFingerprint")]
     public static class AegisFingerprint
     {
         public static string Compute(params string[] values)
@@ -579,6 +599,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisObjectId")]
     public static class AegisObjectId
     {
         public static string TryGet(UnityEngine.Object obj)

@@ -1,7 +1,8 @@
 using System;
 
-namespace MisterPxl.Aegis.Tests
+namespace Astra.Aegis.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.Tests", "Aegis.Editor.Tests", "AegisRegressionRule")]
     public sealed class AegisRegressionRule : AegisRuleAsset
     {
         [NonSerialized] public Action OnEvaluate;

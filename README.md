@@ -2,8 +2,9 @@
 
 Part of the **Astra** family. This package works independently of the Astra framework.
 
-The Astra menu labels described here are unreleased. Existing published tags keep
-their previous labels until the next release; package IDs and C# APIs are unchanged.
+This branch contains the **1.0.0 migration candidate**: namespaces and assemblies
+have changed. Read [the migration guide](Documentation~/Migration-1.0/README.md)
+before upgrading an existing project. No 1.0 release tag is published yet.
 
 Aegis is an Editor-only Unity package for project health validation. It discovers validation rules as assets, runs them in an interactive dashboard, blocks builds when configured, and exports deterministic reports for CI.
 
@@ -12,14 +13,14 @@ Aegis is an Editor-only Unity package for project health validation. It discover
 Add the package from Git:
 
 ```text
-https://github.com/MisterPxl/Aegis.git#v0.2.0
+https://github.com/MisterPxl/Aegis.git#codex/astra-foundation
 ```
 
 Optional integrations:
 
 ```text
-https://github.com/MisterPxl/Aegis.git?path=/Addons~/Valkyrie#v0.2.0
-https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#v0.2.0
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Valkyrie#codex/astra-foundation
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#codex/astra-foundation
 ```
 
 ## Quick Start
@@ -38,7 +39,7 @@ Use Unity batchmode:
 
 ```bash
 Unity -batchmode -quit -projectPath "$PWD" \
-  -executeMethod MisterPxl.Aegis.AegisCli.Run \
+  -executeMethod Astra.Aegis.AegisCli.Run \
   -aegisProfile CI \
   -aegisJson Library/Aegis/aegis-report.json \
   -aegisJUnit Library/Aegis/aegis-report.xml

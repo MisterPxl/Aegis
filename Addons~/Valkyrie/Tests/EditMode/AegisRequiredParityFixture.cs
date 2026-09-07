@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valkyrie;
 
-namespace MisterPxl.Aegis.ValkyrieIntegration.Tests
+namespace Astra.Aegis.Integrations.Valkyrie.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "AegisRequiredParityFixture")]
     public sealed class AegisRequiredParityFixture : AegisRequiredParityBase
     {
         public RequiredFields Nested = new RequiredFields();
@@ -22,30 +23,35 @@ namespace MisterPxl.Aegis.ValkyrieIntegration.Tests
         [Required, NonSerialized] public UnityEngine.Object NotSerialized;
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "AegisRequiredParityBase")]
     public abstract class AegisRequiredParityBase : ScriptableObject
     {
         [Required, SerializeField] private UnityEngine.Object _inheritedTarget;
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "RequiredFields")]
     public sealed class RequiredFields
     {
         [Required] public UnityEngine.Object Target;
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "RequiredStruct")]
     public struct RequiredStruct
     {
         [Required] public string Text;
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "RequiredNode")]
     public abstract class RequiredNode
     {
         [Required, SerializeField] private UnityEngine.Object _inheritedNodeTarget;
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "RequiredCycleNode")]
     public sealed class RequiredCycleNode : RequiredNode
     {
         [Required] public string Text = "";

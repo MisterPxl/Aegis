@@ -1,0 +1,24 @@
+{
+    "fallbackIds": [
+        "MisterPxl.Aegis.MissingMonoScriptRule",
+        "MisterPxl.Aegis.MissingObjectReferenceRule",
+        "MisterPxl.Aegis.NullCollectionEntryRule",
+        "MisterPxl.Aegis.BuildSceneRule",
+        "MisterPxl.Aegis.PrefabIntegrityRule",
+        "MisterPxl.Aegis.DuplicateAegisKeyRule",
+        "MisterPxl.Aegis.ValkyrieIntegration.ValkyrieRequiredRuleAsset",
+        "MisterPxl.Aegis.ValkyrieIntegration.ValkyrieManagedReferenceRuleAsset"
+    ],
+    "assetIds": [
+        "023ef2499af174af1bcead48a48a5010",
+        "a15122a7068c741ce90b86b33f78548f",
+        "2912e0ad3e8444464b8121d366d4634e",
+        "14c30f119f16346f4bf921adc7843a4f",
+        "82e085ac7822344f38f06c7aa0615c5e",
+        "a0d16e8aacad344ecb88c5e6d76d96d6",
+        "9d7305bebc38e49a88fcacc8e3efd7aa",
+        "68bcb4e904fe040b79e720ab6285a9a0"
+    ],
+    "fingerprint": "7552282192fb202bf4c2d54b37d2f2d896ecea3dfbe1abdc698eec4d315b9f55",
+    "legacyNamespace": "MisterPxl.Aegis"
+}

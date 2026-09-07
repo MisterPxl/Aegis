@@ -1,9 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [CreateAssetMenu(fileName = "MissingMonoScriptRule", menuName = "Astra/Aegis/Rules/Missing Mono Script")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "MissingMonoScriptRule")]
+    [AegisRuleIdentity("MisterPxl.Aegis.MissingMonoScriptRule")]
     public sealed class MissingMonoScriptRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

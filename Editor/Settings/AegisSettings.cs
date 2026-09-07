@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [FilePath("ProjectSettings/AegisSettings.asset", FilePathAttribute.Location.ProjectFolder)]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisSettings")]
     public sealed class AegisSettings : ScriptableSingleton<AegisSettings>
     {
         [SerializeField] private bool _buildGateEnabled = true;

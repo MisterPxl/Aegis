@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [CreateAssetMenu(fileName = "DuplicateAegisKeyRule", menuName = "Astra/Aegis/Rules/Duplicate Aegis Key")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "DuplicateAegisKeyRule")]
+    [AegisRuleIdentity("MisterPxl.Aegis.DuplicateAegisKeyRule")]
     public sealed class DuplicateAegisKeyRule : AegisRuleAsset
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

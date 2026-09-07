@@ -1,15 +1,15 @@
 # Astra Aegis — Helios Integration
 
 An optional **Astra integration**. Install its prerequisites explicitly; the base
-packages remain usable independently. Astra labels in this working copy will ship
-with the next release; existing published tags retain their earlier labels.
+packages remain usable independently. This is the **1.0.0 migration candidate**; it requires Aegis 1.x and uses the
+`Astra.Aegis.Integrations` namespaces. Existing tags retain the old API.
 
 ## Compatibility (unreleased)
 
 The working integration targets Helios Debugger **2.4.0 through 2.x** and uses
 `HeliosReportArtifact` with the `application/json` MIME type. Helios 1.x is no
-longer supported by this working version. The published `v0.2.0` URL below still
-contains the earlier integration; these changes require a new integration release.
+longer supported. The branch URL below is a candidate; pin the exact revision
+validated with your consumer before shipping.
 
 All Runtime, Editor and test assemblies are excluded when
 `HELIOS_DEBUGGER_DISABLE` is set. The base Aegis Editor validator remains available.
@@ -23,7 +23,7 @@ registering a package physically nested inside the local Aegis package.
 Optional package:
 
 ```text
-https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#v0.2.0
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#codex/astra-foundation
 ```
 
 During validated builds, the editor side generates a minimal `AegisValidationSnapshot` resource. At runtime, the Helios side exposes that snapshot through System Info and attaches the same JSON to bug reports.
@@ -37,7 +37,7 @@ Helios materializer and keeps its captured values when the source snapshot chang
 
 The manifest declares these package versions:
 
-- `com.misterpxl.aegis`: `0.2.0`.
+- `com.misterpxl.aegis`: `1.0.0` (compatible 1.x).
 - `com.misterpxl.helios-debugger`: `2.4.0`.
 
 Install the Astra base packages explicitly in the consumer manifest, using the
@@ -52,9 +52,9 @@ its suites in Unity Test Runner.
 Remove project components, assets or code that reference this integration before
 removing it through Package Manager. The base packages can remain installed.
 
-## Runtime lifecycle (0.3.0 candidate)
+## Runtime lifecycle
 
-The working integration is version 0.3.0 and requires Helios 2.4.0. Bootstrap
+The integration requires Helios 2.4.0 through 2.x. Bootstrap
 registers a passive observer before the first scene; it does not create a polling
 GameObject, impose a timeout or initialize Helios. Each service generation receives
 one provider and, when a snapshot exists, one JSON artifact. Shutdown removes those

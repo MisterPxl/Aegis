@@ -5,8 +5,9 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisRuleDiscovery")]
     public static class AegisRuleDiscovery
     {
         // Fallback rules are cached so repeated discovery does not accumulate
@@ -78,6 +79,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisRunner")]
     public sealed class AegisRunner
     {
         public AegisRunResult Run(AegisValidationProfile profile)
@@ -167,6 +169,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisInteractiveRun")]
     public sealed class AegisInteractiveRun
     {
         private readonly List<AegisRuleAsset> _rules;
@@ -247,6 +250,7 @@ namespace MisterPxl.Aegis
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisReportStore")]
     public static class AegisReportStore
     {
         public static void SaveLastReport(AegisValidationReport report)

@@ -11,8 +11,9 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Object = UnityEngine.Object;
 
-namespace MisterPxl.Aegis.Tests
+namespace Astra.Aegis.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.Tests", "Aegis.Editor.Tests", "AegisRegressionTests")]
     public sealed class AegisRegressionTests
     {
         private string _folder;

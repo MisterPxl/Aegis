@@ -2,8 +2,9 @@ using NUnit.Framework;
 using UnityEngine;
 using Valkyrie;
 
-namespace MisterPxl.Aegis.ValkyrieIntegration.Tests
+namespace Astra.Aegis.Integrations.Valkyrie.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "AegisValkyrieTests")]
     public sealed class AegisValkyrieTests
     {
         [Test]

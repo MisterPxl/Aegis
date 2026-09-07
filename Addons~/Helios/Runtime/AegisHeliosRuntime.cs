@@ -1,12 +1,14 @@
+using HeliosApi = global::HeliosDebugger.Helios;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using HeliosDebugger;
 using UnityEngine;
 
-namespace MisterPxl.Aegis.HeliosIntegration
+namespace Astra.Aegis.Integrations.Helios
 {
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.HeliosIntegration", "Aegis.Helios.Runtime", "AegisValidationSnapshot")]
     public sealed class AegisValidationSnapshot
     {
         public string profile;
@@ -26,6 +28,7 @@ namespace MisterPxl.Aegis.HeliosIntegration
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.HeliosIntegration", "Aegis.Helios.Runtime", "AegisHeliosSystemInfoProvider")]
     public sealed class AegisHeliosSystemInfoProvider : IHeliosSystemInfoProvider
     {
         private readonly AegisValidationSnapshot _snapshot;
@@ -56,6 +59,7 @@ namespace MisterPxl.Aegis.HeliosIntegration
     }
 
     /// <summary>Owns Aegis registrations across Helios service generations without booting Helios.</summary>
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.HeliosIntegration", "Aegis.Helios.Runtime", "AegisHeliosRegistration")]
     public sealed class AegisHeliosRegistration : IDisposable
     {
         private readonly AegisHeliosSystemInfoProvider _provider;
@@ -67,9 +71,9 @@ namespace MisterPxl.Aegis.HeliosIntegration
         {
             _provider = new AegisHeliosSystemInfoProvider(snapshot);
             _artifact = snapshot?.CreateReportArtifact();
-            Helios.Initialized += Attach;
-            Helios.ShuttingDown += Detach;
-            if (Helios.TryGetService(out var service)) Attach(service);
+            HeliosApi.Initialized += Attach;
+            HeliosApi.ShuttingDown += Detach;
+            if (HeliosApi.TryGetService(out var service)) Attach(service);
         }
 
         private void Attach(HeliosService service)
@@ -93,12 +97,13 @@ namespace MisterPxl.Aegis.HeliosIntegration
         {
             if (_disposed) return;
             _disposed = true;
-            Helios.Initialized -= Attach;
-            Helios.ShuttingDown -= Detach;
+            HeliosApi.Initialized -= Attach;
+            HeliosApi.ShuttingDown -= Detach;
             if (_service != null) Detach(_service);
         }
     }
 
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.HeliosIntegration", "Aegis.Helios.Runtime", "AegisHeliosBootstrap")]
     public static class AegisHeliosBootstrap
     {
         private const string SnapshotResourcePath = "AegisValidationSnapshot";

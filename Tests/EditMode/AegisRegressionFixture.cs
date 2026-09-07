@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace MisterPxl.Aegis.Tests
+namespace Astra.Aegis.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.Tests", "Aegis.Editor.Tests", "AegisRegressionFixture")]
     public sealed class AegisRegressionFixture : ScriptableObject
     {
         [SerializeReference] public AegisRegressionNode Node;
@@ -12,6 +13,7 @@ namespace MisterPxl.Aegis.Tests
     }
 
     [Serializable]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.Tests", "Aegis.Editor.Tests", "AegisRegressionNode")]
     public sealed class AegisRegressionNode
     {
         [SerializeReference] public AegisRegressionNode Next;

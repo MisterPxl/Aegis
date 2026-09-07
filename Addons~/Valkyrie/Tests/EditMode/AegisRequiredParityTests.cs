@@ -7,8 +7,9 @@ using UnityEngine;
 using Valkyrie;
 using Valkyrie.Editor;
 
-namespace MisterPxl.Aegis.ValkyrieIntegration.Tests
+namespace Astra.Aegis.Integrations.Valkyrie.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "AegisRequiredParityTests")]
     public sealed class AegisRequiredParityTests
     {
         private string _folder;

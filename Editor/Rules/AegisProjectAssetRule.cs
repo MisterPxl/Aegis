@@ -5,8 +5,9 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisProjectAssetRule")]
     public abstract class AegisProjectAssetRule : AegisRuleAsset
     {
         protected delegate void AegisProjectObjectEvaluator(string path, UnityEngine.Object obj, IAegisFindingSink sink);

@@ -4,8 +4,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisDashboardWindow")]
     public sealed class AegisDashboardWindow : EditorWindow
     {
         private readonly List<AegisFinding> _filteredFindings = new List<AegisFinding>();

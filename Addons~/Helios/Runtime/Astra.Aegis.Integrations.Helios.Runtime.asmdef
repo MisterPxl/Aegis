@@ -1,31 +1,31 @@
 {
-  "name": "Aegis.Helios.Tests",
-  "rootNamespace": "MisterPxl.Aegis.HeliosIntegration.Tests",
+  "name": "Astra.Aegis.Integrations.Helios.Runtime",
+  "rootNamespace": "Astra.Aegis.Integrations.Helios",
   "references": [
-    "Aegis.Helios.Runtime",
     "HeliosDebugger.Runtime"
   ],
-  "includePlatforms": [
-    "Editor"
-  ],
+  "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
   "overrideReferences": false,
   "precompiledReferences": [],
-  "autoReferenced": false,
+  "autoReferenced": true,
   "defineConstraints": [
     "AEGIS_HELIOS_AVAILABLE",
-    "!HELIOS_DEBUGGER_DISABLE"
+    "!HELIOS_DEBUGGER_DISABLE",
+    "ASTRA_AEGIS_V1"
   ],
   "versionDefines": [
     {
       "name": "com.misterpxl.helios-debugger",
       "expression": "[2.4.0,3.0.0)",
       "define": "AEGIS_HELIOS_AVAILABLE"
+    },
+    {
+      "name": "com.misterpxl.aegis",
+      "expression": "[1.0.0,2.0.0)",
+      "define": "ASTRA_AEGIS_V1"
     }
   ],
-  "noEngineReferences": false,
-  "optionalUnityReferences": [
-    "TestAssemblies"
-  ]
+  "noEngineReferences": false
 }

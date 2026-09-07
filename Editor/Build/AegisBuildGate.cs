@@ -2,8 +2,9 @@ using System.IO;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisBuildGate")]
     public sealed class AegisBuildGate : IPreprocessBuildWithReport
     {
         public int callbackOrder => -5000;

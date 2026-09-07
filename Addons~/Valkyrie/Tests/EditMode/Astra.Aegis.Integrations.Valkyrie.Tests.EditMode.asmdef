@@ -1,9 +1,9 @@
 {
-  "name": "Aegis.Valkyrie.Editor.Tests",
-  "rootNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+  "name": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+  "rootNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
   "references": [
-    "Aegis.Editor",
-    "Aegis.Valkyrie.Editor",
+    "Astra.Aegis.Editor",
+    "Astra.Aegis.Integrations.Valkyrie.Editor",
     "Valkyrie.Runtime",
     "Valkyrie.Editor"
   ],
@@ -16,13 +16,19 @@
   "precompiledReferences": [],
   "autoReferenced": false,
   "defineConstraints": [
-    "AEGIS_VALKYRIE_AVAILABLE"
+    "AEGIS_VALKYRIE_AVAILABLE",
+    "ASTRA_AEGIS_V1"
   ],
   "versionDefines": [
     {
       "name": "com.misterpxl.valkyrie",
       "expression": "[1.5.0,2.0.0)",
       "define": "AEGIS_VALKYRIE_AVAILABLE"
+    },
+    {
+      "name": "com.misterpxl.aegis",
+      "expression": "[1.0.0,2.0.0)",
+      "define": "ASTRA_AEGIS_V1"
     }
   ],
   "noEngineReferences": false,

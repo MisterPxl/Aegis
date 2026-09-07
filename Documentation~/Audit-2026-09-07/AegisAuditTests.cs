@@ -6,7 +6,7 @@ using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
-namespace MisterPxl.Aegis.Tests {
+namespace Astra.Aegis.Tests {
 public sealed class AegisAuditTests {
 [Test] public void BuiltInRule_AssetRoundTrip() {
  const string p="Assets/AuditRule.asset";

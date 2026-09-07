@@ -1,13 +1,13 @@
 # Astra Aegis — Valkyrie Integration
 
 An optional **Astra integration**. Install its prerequisites explicitly; the base
-packages remain usable independently. Astra labels in this working copy will ship
-with the next release; existing published tags retain their earlier labels.
+packages remain usable independently. This is the **1.0.0 migration candidate**; it requires Aegis 1.x and uses the
+`Astra.Aegis.Integrations` namespaces. Existing tags retain the old API.
 
 Optional package:
 
 ```text
-https://github.com/MisterPxl/Aegis.git?path=/Addons~/Valkyrie#v0.2.0
+https://github.com/MisterPxl/Aegis.git?path=/Addons~/Valkyrie#codex/astra-foundation
 ```
 
 Adds Aegis rules for:
@@ -23,7 +23,7 @@ For local development and validation, copy each package into its own `Packages/<
 
 The manifest declares these package versions:
 
-- `com.misterpxl.aegis`: `0.2.0`.
+- `com.misterpxl.aegis`: `1.0.0` (compatible 1.x).
 - `com.misterpxl.valkyrie`: `1.5.0` (compatible 1.x with the nested-inspector helpers).
 
 Install the Astra base packages explicitly in the consumer manifest, using the
@@ -38,9 +38,8 @@ its suites in Unity Test Runner.
 The working integration uses Valkyrie’s Editor helpers to share the inspector’s
 presence checks and messages. The validated Valkyrie source is commit `7f64342`
 (on `codex/astra-conventions`), which includes the nested-inspector implementation;
-the older `v1.5.0` tag alone does not identify those later fixes. The published
-Aegis `v0.2.0` integration URL above does not contain these L3 changes. Publish
-new versions and update consumer Git revisions together before a release.
+the older `v1.5.0` tag alone does not identify those later fixes. The branch URL
+above includes these changes; pin validated revisions before a release.
 
 Validation traverses serialized nested classes, structs, lists, arrays and
 polymorphic references, including private fields inherited from base classes.

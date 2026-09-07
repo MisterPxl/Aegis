@@ -5,8 +5,9 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MisterPxl.Aegis.Tests
+namespace Astra.Aegis.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.Tests", "Aegis.Editor.Tests", "AegisCoreTests")]
     public sealed class AegisCoreTests
     {
         [Test]

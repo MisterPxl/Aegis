@@ -1,0 +1,535 @@
+{
+  "sourceRevision": "3516a50157ee8c9b7515e41eb50a231f8a610594",
+  "assemblies": {
+    "Aegis.Editor.Tests": "Astra.Aegis.Tests.EditMode",
+    "Aegis.Valkyrie.Editor.Tests": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+    "Aegis.Helios.Tests": "Astra.Aegis.Integrations.Helios.Tests.EditMode",
+    "Aegis.Valkyrie.Editor": "Astra.Aegis.Integrations.Valkyrie.Editor",
+    "Aegis.Helios.Editor": "Astra.Aegis.Integrations.Helios.Editor",
+    "Aegis.Helios.Runtime": "Astra.Aegis.Integrations.Helios.Runtime",
+    "Aegis.Editor": "Astra.Aegis.Editor"
+  },
+  "types": [
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration.Editor",
+      "oldAssembly": "Aegis.Helios.Editor",
+      "type": "AegisHeliosBuildSnapshot",
+      "newNamespace": "Astra.Aegis.Integrations.Helios.Editor",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Editor",
+      "path": "Addons~/Helios/Editor/AegisHeliosBuildSnapshot.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration",
+      "oldAssembly": "Aegis.Helios.Runtime",
+      "type": "AegisValidationSnapshot",
+      "newNamespace": "Astra.Aegis.Integrations.Helios",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Runtime",
+      "path": "Addons~/Helios/Runtime/AegisHeliosRuntime.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration",
+      "oldAssembly": "Aegis.Helios.Runtime",
+      "type": "AegisHeliosSystemInfoProvider",
+      "newNamespace": "Astra.Aegis.Integrations.Helios",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Runtime",
+      "path": "Addons~/Helios/Runtime/AegisHeliosRuntime.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration",
+      "oldAssembly": "Aegis.Helios.Runtime",
+      "type": "AegisHeliosRegistration",
+      "newNamespace": "Astra.Aegis.Integrations.Helios",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Runtime",
+      "path": "Addons~/Helios/Runtime/AegisHeliosRuntime.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration",
+      "oldAssembly": "Aegis.Helios.Runtime",
+      "type": "AegisHeliosBootstrap",
+      "newNamespace": "Astra.Aegis.Integrations.Helios",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Runtime",
+      "path": "Addons~/Helios/Runtime/AegisHeliosRuntime.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration.Tests",
+      "oldAssembly": "Aegis.Helios.Tests",
+      "type": "AegisHeliosLifecycleTests",
+      "newNamespace": "Astra.Aegis.Integrations.Helios.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Tests.EditMode",
+      "path": "Addons~/Helios/Tests/EditMode/AegisHeliosLifecycleTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration.Tests",
+      "oldAssembly": "Aegis.Helios.Tests",
+      "type": "AegisHeliosPlaySessionTests",
+      "newNamespace": "Astra.Aegis.Integrations.Helios.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Tests.EditMode",
+      "path": "Addons~/Helios/Tests/EditMode/AegisHeliosPlaySessionTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.HeliosIntegration.Tests",
+      "oldAssembly": "Aegis.Helios.Tests",
+      "type": "AegisHeliosTests",
+      "newNamespace": "Astra.Aegis.Integrations.Helios.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Helios.Tests.EditMode",
+      "path": "Addons~/Helios/Tests/EditMode/AegisHeliosTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration",
+      "oldAssembly": "Aegis.Valkyrie.Editor",
+      "type": "ValkyrieManagedReferenceRuleAsset",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Editor",
+      "path": "Addons~/Valkyrie/Editor/ValkyrieManagedReferenceRuleAsset.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration",
+      "oldAssembly": "Aegis.Valkyrie.Editor",
+      "type": "ValkyrieRequiredRuleAsset",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Editor",
+      "path": "Addons~/Valkyrie/Editor/ValkyrieRequiredRuleAsset.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisRequiredParityFixture",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisRequiredParityBase",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "RequiredFields",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "RequiredStruct",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "RequiredNode",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "RequiredCycleNode",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisRequiredParityTests",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisRequiredParityTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisValkyrieRegressionFixture",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisValkyrieRegressionFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisValkyrieNode",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisValkyrieRegressionFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisValkyrieRegressionTests",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisValkyrieRegressionTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.ValkyrieIntegration.Tests",
+      "oldAssembly": "Aegis.Valkyrie.Editor.Tests",
+      "type": "AegisValkyrieTests",
+      "newNamespace": "Astra.Aegis.Integrations.Valkyrie.Tests",
+      "newAssembly": "Astra.Aegis.Integrations.Valkyrie.Tests.EditMode",
+      "path": "Addons~/Valkyrie/Tests/EditMode/AegisValkyrieTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisBuildGate",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Build/AegisBuildGate.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisCli",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Cli/AegisCli.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisSeverity",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisFixSafety",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisRuleExecutionStatus",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisExitCode",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "IAegisFindingSink",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "IAegisFixAction",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "IAegisKeyProvider",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisFinding",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisRuleExecutionRecord",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisValidationReport",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisFixResult",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisRunResult",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisValidationProfile",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisSuppression",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisValidationContext",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisRuleAsset",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisFindingSink",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisPackageInfo",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisFingerprint",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisObjectId",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisCore.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisSerializedProperties",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Core/AegisSerializedProperties.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisDashboardWindow",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Dashboard/AegisDashboardWindow.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisReportFinalizer",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Reports/AegisReportFinalizer.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisReportWriters",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Reports/AegisReportWriters.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisProjectAssetRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/AegisProjectAssetRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "BuildSceneRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/BuildSceneRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "DuplicateAegisKeyRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/DuplicateAegisKeyRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "MissingMonoScriptRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/MissingMonoScriptRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "MissingObjectReferenceRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/MissingObjectReferenceRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "NullCollectionEntryRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/NullCollectionEntryRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "PrefabIntegrityRule",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Rules/PrefabIntegrityRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisRuleDiscovery",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Runner/AegisRunner.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisRunner",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Runner/AegisRunner.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisInteractiveRun",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Runner/AegisRunner.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisReportStore",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Runner/AegisRunner.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis",
+      "oldAssembly": "Aegis.Editor",
+      "type": "AegisSettings",
+      "newNamespace": "Astra.Aegis",
+      "newAssembly": "Astra.Aegis.Editor",
+      "path": "Editor/Settings/AegisSettings.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.Tests",
+      "oldAssembly": "Aegis.Editor.Tests",
+      "type": "AegisCoreTests",
+      "newNamespace": "Astra.Aegis.Tests",
+      "newAssembly": "Astra.Aegis.Tests.EditMode",
+      "path": "Tests/EditMode/AegisCoreTests.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.Tests",
+      "oldAssembly": "Aegis.Editor.Tests",
+      "type": "AegisRegressionFixture",
+      "newNamespace": "Astra.Aegis.Tests",
+      "newAssembly": "Astra.Aegis.Tests.EditMode",
+      "path": "Tests/EditMode/AegisRegressionFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.Tests",
+      "oldAssembly": "Aegis.Editor.Tests",
+      "type": "AegisRegressionNode",
+      "newNamespace": "Astra.Aegis.Tests",
+      "newAssembly": "Astra.Aegis.Tests.EditMode",
+      "path": "Tests/EditMode/AegisRegressionFixture.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.Tests",
+      "oldAssembly": "Aegis.Editor.Tests",
+      "type": "AegisRegressionRule",
+      "newNamespace": "Astra.Aegis.Tests",
+      "newAssembly": "Astra.Aegis.Tests.EditMode",
+      "path": "Tests/EditMode/AegisRegressionRule.cs"
+    },
+    {
+      "oldNamespace": "MisterPxl.Aegis.Tests",
+      "oldAssembly": "Aegis.Editor.Tests",
+      "type": "AegisRegressionTests",
+      "newNamespace": "Astra.Aegis.Tests",
+      "newAssembly": "Astra.Aegis.Tests.EditMode",
+      "path": "Tests/EditMode/AegisRegressionTests.cs"
+    }
+  ],
+  "samples": [
+    {
+      "path": "Samples~/Custom Rule/Editor/SceneNamingRule.cs",
+      "oldNamespace": "Aegis.Samples",
+      "newNamespace": "Astra.Aegis.Samples",
+      "assembly": "consumer-owned, unchanged",
+      "type": "SceneNamingRule"
+    }
+  ]
+}

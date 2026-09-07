@@ -5,8 +5,9 @@ using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis.ValkyrieIntegration.Tests
+namespace Astra.Aegis.Integrations.Valkyrie.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration.Tests", "Aegis.Valkyrie.Editor.Tests", "AegisValkyrieRegressionTests")]
     public sealed class AegisValkyrieRegressionTests
     {
         private string _folder;

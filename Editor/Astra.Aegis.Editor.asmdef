@@ -1,6 +1,6 @@
 {
-  "name": "Aegis.Editor",
-  "rootNamespace": "MisterPxl.Aegis",
+  "name": "Astra.Aegis.Editor",
+  "rootNamespace": "Astra.Aegis",
   "references": [],
   "includePlatforms": [
     "Editor"

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c67a8711125740758b3f4cead5b94a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Aegis.Editor::MisterPxl.Aegis.AegisSettings
+  _buildGateEnabled: 0
+  _interactiveProfile:
+    _name: Interactive
+    _failureThreshold: 2
+    _includedFolders: []
+    _excludedFolders: []
+    _includedCategories: []
+    _disabledRuleIds: []
+    _frameBudgetMs: 8
+  _buildProfile:
+    _name: Build
+    _failureThreshold: 2
+    _includedFolders: []
+    _excludedFolders: []
+    _includedCategories: []
+    _disabledRuleIds:
+    - 023ef2499af174af1bcead48a48a5010
+    _frameBudgetMs: 1
+  _ciProfile:
+    _name: CI
+    _failureThreshold: 2
+    _includedFolders:
+    - Assets/AegisMigrationFixture
+    _excludedFolders: []
+    _includedCategories: []
+    _disabledRuleIds:
+    - MisterPxl.Aegis.MissingMonoScriptRule
+    _frameBudgetMs: 19
+  _profileSchemaVersion: 1
+  _suppressions:
+  - _fingerprint: 7552282192fb202bf4c2d54b37d2f2d896ecea3dfbe1abdc698eec4d315b9f55
+    _reason: Legacy suppression
+    _author: Astra
+    _expiresUtc: 

@@ -1,9 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [CreateAssetMenu(fileName = "NullCollectionEntryRule", menuName = "Astra/Aegis/Rules/Null Collection Entry")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "NullCollectionEntryRule")]
+    [AegisRuleIdentity("MisterPxl.Aegis.NullCollectionEntryRule")]
     public sealed class NullCollectionEntryRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

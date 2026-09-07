@@ -6,8 +6,9 @@ using System.Text;
 using System.Xml;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisReportWriters")]
     public static class AegisReportWriters
     {
         public static void WriteJson(AegisValidationReport report, string path)

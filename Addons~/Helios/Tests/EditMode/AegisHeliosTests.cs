@@ -6,8 +6,9 @@ using HeliosDebugger;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace MisterPxl.Aegis.HeliosIntegration.Tests
+namespace Astra.Aegis.Integrations.Helios.Tests
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.HeliosIntegration.Tests", "Aegis.Helios.Tests", "AegisHeliosTests")]
     public sealed class AegisHeliosTests
     {
         [Test]

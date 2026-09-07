@@ -5,9 +5,11 @@ using UnityEngine;
 using Valkyrie;
 using Valkyrie.Editor;
 
-namespace MisterPxl.Aegis.ValkyrieIntegration
+namespace Astra.Aegis.Integrations.Valkyrie
 {
     [CreateAssetMenu(fileName = "ValkyrieRequiredRule", menuName = "Astra/Aegis/Valkyrie/Required Rule")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.ValkyrieIntegration", "Aegis.Valkyrie.Editor", "ValkyrieRequiredRuleAsset")]
+    [AegisRuleIdentity("MisterPxl.Aegis.ValkyrieIntegration.ValkyrieRequiredRuleAsset")]
     public sealed class ValkyrieRequiredRuleAsset : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

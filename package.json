@@ -1,6 +1,6 @@
 {
   "name": "com.misterpxl.aegis",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "displayName": "Astra Aegis — Project Validation",
   "description": "Editor-only project validation dashboard, build gate and CI runner for Unity projects.",
   "unity": "6000.0",

@@ -1,12 +1,13 @@
 using System.IO;
-using MisterPxl.Aegis;
+using Astra.Aegis;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-namespace MisterPxl.Aegis.HeliosIntegration.Editor
+namespace Astra.Aegis.Integrations.Helios.Editor
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis.HeliosIntegration.Editor", "Aegis.Helios.Editor", "AegisHeliosBuildSnapshot")]
     public sealed class AegisHeliosBuildSnapshot : IPreprocessBuildWithReport, IPostprocessBuildWithReport
     {
         private const string ResourceFolder = "Assets/Resources";

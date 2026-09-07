@@ -1,9 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
     [CreateAssetMenu(fileName = "BuildSceneRule", menuName = "Astra/Aegis/Rules/Build Scene")]
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "BuildSceneRule")]
+    [AegisRuleIdentity("MisterPxl.Aegis.BuildSceneRule")]
     public sealed class BuildSceneRule : AegisRuleAsset
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

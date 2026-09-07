@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEditor;
 
-namespace MisterPxl.Aegis
+namespace Astra.Aegis
 {
+    [UnityEngine.Scripting.APIUpdating.MovedFrom(false, "MisterPxl.Aegis", "Aegis.Editor", "AegisSerializedProperties")]
     public static class AegisSerializedProperties
     {
         // The yielded cursor is valid until the next iteration. Call Copy() to retain it.
