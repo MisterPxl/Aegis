@@ -6,7 +6,7 @@
   "unity": "6000.0",
   "dependencies": {
     "com.misterpxl.aegis": "0.2.0",
-    "com.misterpxl.helios-debugger": "1.0.0"
+    "com.misterpxl.helios-debugger": "2.3.1"
   },
   "author": {
     "name": "Alexis Gomes"

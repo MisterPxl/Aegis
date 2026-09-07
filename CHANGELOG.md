@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Fixed: update the Helios integration to the 2.x report artifact API and JSON MIME type.
+- Fixed: require Helios 2.3.1 and exclude the integration's Runtime, Editor and tests when
+  `HELIOS_DEBUGGER_DISABLE` is defined.
+- Tests: add report materialization and snapshot isolation regression tests.
 - Fixed: serialized property scans include hidden fields and terminate on cyclic managed references, including the Valkyrie integration.
 - Fixed: built-in and Valkyrie rule classes have matching script filenames and stable metadata so rule assets survive saving and reimporting.
 - Fixed: the Custom Rule sample is an Editor script with a matching filename and no longer enters Player compilation.

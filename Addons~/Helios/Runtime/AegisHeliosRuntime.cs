@@ -16,6 +16,14 @@ namespace MisterPxl.Aegis.HeliosIntegration
         public int errors;
         public int warnings;
         public int infos;
+
+        public HeliosReportArtifact CreateReportArtifact()
+        {
+            return new HeliosReportArtifact(
+                "aegis-validation.json",
+                "application/json",
+                Encoding.UTF8.GetBytes(JsonUtility.ToJson(this, true)));
+        }
     }
 
     public sealed class AegisHeliosSystemInfoProvider : IHeliosSystemInfoProvider
@@ -83,8 +91,7 @@ namespace MisterPxl.Aegis.HeliosIntegration
             Helios.RegisterSystemInfoProvider(new AegisHeliosSystemInfoProvider(snapshot));
             if (snapshot != null)
             {
-                string json = JsonUtility.ToJson(snapshot, true);
-                Helios.AddReportAttachment(new HeliosReportAttachment("aegis-validation.json", Encoding.UTF8.GetBytes(json)));
+                Helios.AddReportAttachment(snapshot.CreateReportArtifact());
             }
 
             _registered = true;
