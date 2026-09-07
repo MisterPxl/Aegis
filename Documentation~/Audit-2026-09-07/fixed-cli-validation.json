@@ -1,0 +1,56 @@
+[
+  {
+    "case": "warning",
+    "exitCode": 0,
+    "expected": 0,
+    "buildGate": "passed",
+    "junit": {
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "6"
+    }
+  },
+  {
+    "case": "blocking",
+    "exitCode": 2,
+    "expected": 2,
+    "buildGate": "blocked",
+    "junit": {
+      "tests": "7",
+      "failures": "1",
+      "errors": "0",
+      "skipped": "6"
+    }
+  },
+  {
+    "case": "suppressed",
+    "exitCode": 0,
+    "expected": 0,
+    "buildGate": "passed",
+    "junit": {
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "6"
+    }
+  },
+  {
+    "case": "exception",
+    "exitCode": 4,
+    "expected": 4,
+    "buildGate": "blocked",
+    "junit": {
+      "tests": "7",
+      "failures": "0",
+      "errors": "1",
+      "skipped": "6"
+    }
+  },
+  {
+    "case": "unknown",
+    "exitCode": 3,
+    "expected": 3,
+    "buildGate": "passed"
+  }
+]

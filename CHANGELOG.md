@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+- Fixed: serialized property scans include hidden fields and terminate on cyclic managed references, including the Valkyrie integration.
+- Fixed: built-in and Valkyrie rule classes have matching script filenames and stable metadata so rule assets survive saving and reimporting.
+- Fixed: the Custom Rule sample is an Editor script with a matching filename and no longer enters Player compilation.
+- Fixed: dashboard runs, selected-rule runs and synchronous runs share suppression filtering and effective rule counts; suppressing a selected finding also clears its stale selection.
+- Fixed: JUnit exports use active findings and the configured failure threshold, distinguish execution errors from validation failures, and preserve skipped rules.
+- Fixed: settings initialize all profiles before saving and migrate legacy Build/CI profiles without discarding configured filters, thresholds or disabled rules.
+- Fixed: cancelled runs return an incomplete result and retain the last completed report; JSON, JUnit and the dashboard expose cancellation explicitly.
+- Changed: rule execution exceptions return CLI exit code 4 and still export both reports, even when their diagnostic finding has been suppressed.
+- Added: regression tests for rule asset persistence, cyclic/hidden data, suppressions, profile migration, cancellation and JUnit semantics.
+
 ## 0.2.0
 
 - Fixed: scanning a scene already open in the editor no longer closes it (potential loss of unsaved work).

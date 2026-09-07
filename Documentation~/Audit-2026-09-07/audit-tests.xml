@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="18" result="Failed(Child)" total="18" passed="9" failed="9" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.3417806">
+  <test-suite type="TestSuite" id="1000" name="UnityProject~" fullname="UnityProject~" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.341781" total="18" passed="9" failed="9" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1021" name="Aegis.Editor.Tests.dll" fullname="/private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/UnityProject~/Library/ScriptAssemblies/Aegis.Editor.Tests.dll" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.336183" total="18" passed="9" failed="9" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="29942" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1022" name="MisterPxl" fullname="MisterPxl" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.335921" total="18" passed="9" failed="9" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1023" name="Aegis" fullname="MisterPxl.Aegis" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.335842" total="18" passed="9" failed="9" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1024" name="Tests" fullname="MisterPxl.Aegis.Tests" runstate="Runnable" testcasecount="18" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.335734" total="18" passed="9" failed="9" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestFixture" id="1001" name="AegisAuditTests" fullname="MisterPxl.Aegis.Tests.AegisAuditTests" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" testcasecount="8" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.188040" total="8" passed="0" failed="8" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1002" name="BuiltInRule_AssetRoundTrip" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.BuiltInRule_AssetRoundTrip" methodname="BuiltInRule_AssetRoundTrip" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="862821639" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.044180" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Saved built-in rule cannot be reloaded
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests.BuiltInRule_AssetRoundTrip () [0x0002d] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:15
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[No script asset for MissingMonoScriptRule. Check that the definition is in a file of the same name and that it compiles properly.
+]]></output>
+              </test-case>
+              <test-case id="1006" name="BuiltInRule_HasPersistableScript" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.BuiltInRule_HasPersistableScript" methodname="BuiltInRule_HasPersistableScript" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="2041738288" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.000582" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Built-in rule has no MonoScript
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests.BuiltInRule_HasPersistableScript () [0x0000f] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:45
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1005" name="CancelledRun_IsNotSuccessful" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.CancelledRun_IsNotSuccessful" methodname="CancelledRun_IsNotSuccessful" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="627743428" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.032015" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Cancelled incomplete report is reported as successful
+  Expected: False
+  But was:  True
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests+<CancelledRun_IsNotSuccessful>d__3.MoveNext () [0x0009b] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:41
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in ./Library/PackageCache/com.unity.test-framework@629486125cfc/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1007" name="InteractiveRun_RespectsSuppressions" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.InteractiveRun_RespectsSuppressions" methodname="InteractiveRun_RespectsSuppressions" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="1522403886" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.028278" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Suppressed finding reappears in interactive report
+  Expected: False
+  But was:  True
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests+<InteractiveRun_RespectsSuppressions>d__5.MoveNext () [0x0016b] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:61
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in ./Library/PackageCache/com.unity.test-framework@629486125cfc/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1009" name="JUnit_DisabledRuleIsSkipped" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.JUnit_DisabledRuleIsSkipped" methodname="JUnit_DisabledRuleIsSkipped" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="2078119930" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.003247" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Expected: String containing "<skipped"
+  But was:  "<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="Aegis" tests="1" failures="0">
+  <testcase classname="Aegis" name="Rule" time="0.000">
+  </testcase>
+</testsuite>
+"
+]]></message>
+                  <stack-trace><![CDATA[at NUnit.Framework.StringAssert.Contains (System.String expected, System.String actual, System.String message, System.Object[] args) [0x00007] in <f577cd9686154d6ab10efd7e65e64366>:0
+at NUnit.Framework.StringAssert.Contains (System.String expected, System.String actual) [0x00000] in <f577cd9686154d6ab10efd7e65e64366>:0
+at MisterPxl.Aegis.Tests.AegisAuditTests.JUnit_DisabledRuleIsSkipped () [0x00054] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:72
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1008" name="JUnit_SuppressedFindingsDoNotFail" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.JUnit_SuppressedFindingsDoNotFail" methodname="JUnit_SuppressedFindingsDoNotFail" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="625686980" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.001010" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  No active findings but JUnit reports failure
+  Expected: False
+  But was:  True
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests.JUnit_SuppressedFindingsDoNotFail () [0x00056] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:68
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1004" name="MissingReference_ScansHiddenSerializedField" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.MissingReference_ScansHiddenSerializedField" methodname="MissingReference_ScansHiddenSerializedField" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="1201073180" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.040716" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Hidden serialized missing reference is ignored
+  Expected: True
+  But was:  False
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests.MissingReference_ScansHiddenSerializedField () [0x000e6] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:35
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1003" name="SerializedTraversal_TerminatesOnCycle" fullname="MisterPxl.Aegis.Tests.AegisAuditTests.SerializedTraversal_TerminatesOnCycle" methodname="SerializedTraversal_TerminatesOnCycle" classname="MisterPxl.Aegis.Tests.AegisAuditTests" runstate="Runnable" seed="1124850982" result="Failed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.029785" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  NextVisible(true) repeatedly visits cyclic managed references
+  Expected: less than 1000
+  But was:  1000
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisAuditTests.SerializedTraversal_TerminatesOnCycle () [0x00055] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisAuditTests.cs:22
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1010" name="AegisCoreTests" fullname="MisterPxl.Aegis.Tests.AegisCoreTests" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" testcasecount="10" result="Failed" site="Child" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.146939" total="10" passed="9" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1017" name="Fingerprint_IgnoresMessageForAnchoredFindings" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_IgnoresMessageForAnchoredFindings" methodname="Fingerprint_IgnoresMessageForAnchoredFindings" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1165685427" result="Passed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.001770" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="Fingerprint_IsDeterministic" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_IsDeterministic" methodname="Fingerprint_IsDeterministic" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1407822917" result="Passed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.000153" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1018" name="Fingerprint_UsesMessageForUnanchoredFindings" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_UsesMessageForUnanchoredFindings" methodname="Fingerprint_UsesMessageForUnanchoredFindings" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="506311561" result="Passed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.000160" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="JUnit_FailuresAttributeMatchesFailureElements" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.JUnit_FailuresAttributeMatchesFailureElements" methodname="JUnit_FailuresAttributeMatchesFailureElements" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1618616093" result="Passed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:32Z" duration="0.001403" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" methodname="MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="440562580" result="Passed" start-time="2026-09-07 10:11:32Z" end-time="2026-09-07 10:11:33Z" duration="0.082004" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="Profile_ExcludesConfiguredFolders" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Profile_ExcludesConfiguredFolders" methodname="Profile_ExcludesConfiguredFolders" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1424006575" result="Passed" start-time="2026-09-07 10:11:33Z" end-time="2026-09-07 10:11:33Z" duration="0.000283" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="Report_CountsFindingsBySeverity" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Report_CountsFindingsBySeverity" methodname="Report_CountsFindingsBySeverity" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1987973477" result="Passed" start-time="2026-09-07 10:11:33Z" end-time="2026-09-07 10:11:33Z" duration="0.000372" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="Runner_IsolatesRuleExceptions" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Runner_IsolatesRuleExceptions" methodname="Runner_IsolatesRuleExceptions" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="413393969" result="Passed" start-time="2026-09-07 10:11:33Z" end-time="2026-09-07 10:11:33Z" duration="0.001277" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" methodname="SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1568941231" result="Passed" start-time="2026-09-07 10:11:33Z" end-time="2026-09-07 10:11:33Z" duration="0.055263" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="Settings_TryGetProfile_RejectsUnknownName" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Settings_TryGetProfile_RejectsUnknownName" methodname="Settings_TryGetProfile_RejectsUnknownName" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="242908488" result="Failed" start-time="2026-09-07 10:11:33Z" end-time="2026-09-07 10:11:33Z" duration="0.001607" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Expected string length 5 but was 11. Strings differ at index 0.
+  Expected: "Build"
+  But was:  "Interactive"
+  -----------^
+]]></message>
+                  <stack-trace><![CDATA[at MisterPxl.Aegis.Tests.AegisCoreTests.Settings_TryGetProfile_RejectsUnknownName () [0x00036] in /private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/Tests/EditMode/AegisCoreTests.cs:179
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: /var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/UnityProject~/Audit~/results3.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

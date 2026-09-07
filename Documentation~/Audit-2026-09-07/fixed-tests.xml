@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="33" result="Passed" total="33" passed="33" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.8777172">
+  <test-suite type="TestSuite" id="1000" name="UnityProject~" fullname="UnityProject~" runstate="Runnable" testcasecount="33" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.877717" total="33" passed="33" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1034" name="Aegis.Editor.Tests.dll" fullname="/private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-fixes-igrvh8hr/Project/Library/ScriptAssemblies/Aegis.Editor.Tests.dll" runstate="Runnable" testcasecount="29" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.796853" total="29" passed="29" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46070" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1035" name="MisterPxl" fullname="MisterPxl" runstate="Runnable" testcasecount="29" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.796688" total="29" passed="29" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1036" name="Aegis" fullname="MisterPxl.Aegis" runstate="Runnable" testcasecount="29" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.796625" total="29" passed="29" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1037" name="Tests" fullname="MisterPxl.Aegis.Tests" runstate="Runnable" testcasecount="29" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.796514" total="29" passed="29" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="AegisCoreTests" fullname="MisterPxl.Aegis.Tests.AegisCoreTests" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.148923" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1008" name="Fingerprint_IgnoresMessageForAnchoredFindings" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_IgnoresMessageForAnchoredFindings" methodname="Fingerprint_IgnoresMessageForAnchoredFindings" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="817568073" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.008739" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1002" name="Fingerprint_IsDeterministic" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_IsDeterministic" methodname="Fingerprint_IsDeterministic" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1212527645" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.000175" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="Fingerprint_UsesMessageForUnanchoredFindings" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_UsesMessageForUnanchoredFindings" methodname="Fingerprint_UsesMessageForUnanchoredFindings" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1625162769" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.001066" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="JUnit_FailuresAttributeMatchesFailureElements" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.JUnit_FailuresAttributeMatchesFailureElements" methodname="JUnit_FailuresAttributeMatchesFailureElements" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="667747627" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.018306" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" methodname="MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1603253824" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.067412" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1003" name="Profile_ExcludesConfiguredFolders" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Profile_ExcludesConfiguredFolders" methodname="Profile_ExcludesConfiguredFolders" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="465857899" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.000267" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="Report_CountsFindingsBySeverity" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Report_CountsFindingsBySeverity" methodname="Report_CountsFindingsBySeverity" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="987217658" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.000298" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="Runner_IsolatesRuleExceptions" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Runner_IsolatesRuleExceptions" methodname="Runner_IsolatesRuleExceptions" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="722452068" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.002582" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" methodname="SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="783894723" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.040398" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="Settings_TryGetProfile_RejectsUnknownName" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Settings_TryGetProfile_RejectsUnknownName" methodname="Settings_TryGetProfile_RejectsUnknownName" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="419562507" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.001295" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1012" name="AegisRegressionTests" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.646911" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1025" name="CancellationBeforeFirstTick_DoesNotExecuteRulesOrOverwriteCompletedReport" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.CancellationBeforeFirstTick_DoesNotExecuteRulesOrOverwriteCompletedReport" methodname="CancellationBeforeFirstTick_DoesNotExecuteRulesOrOverwriteCompletedReport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1854875754" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.038114" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="CancellationDuringRule_KeepsPartialFindingsMarkedIncomplete" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.CancellationDuringRule_KeepsPartialFindingsMarkedIncomplete" methodname="CancellationDuringRule_KeepsPartialFindingsMarkedIncomplete" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="239597247" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.022356" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="Dashboard_RefreshRemovesSuppressedFindingAndStaleSelection" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.Dashboard_RefreshRemovesSuppressedFindingAndStaleSelection" methodname="Dashboard_RefreshRemovesSuppressedFindingAndStaleSelection" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1802933141" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.092899" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1027" name="FailedRule_RemainsAnInternalFailureEvenIfItsFindingIsSuppressed" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.FailedRule_RemainsAnInternalFailureEvenIfItsFindingIsSuppressed" methodname="FailedRule_RemainsAnInternalFailureEvenIfItsFindingIsSuppressed" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="2059626662" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.025258" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1033" name="Finalizer_PreservesMetadataAndRecalculatesEffectiveRuleCounts" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.Finalizer_PreservesMetadataAndRecalculatesEffectiveRuleCounts" methodname="Finalizer_PreservesMetadataAndRecalculatesEffectiveRuleCounts" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1158494112" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.012778" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="InteractiveAndSynchronousRuns_ApplyTheSameSuppressions" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.InteractiveAndSynchronousRuns_ApplyTheSameSuppressions" methodname="InteractiveAndSynchronousRuns_ApplyTheSameSuppressions" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1409705235" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.030619" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="JUnit_CancelledReportCannotAppearSuccessful" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.JUnit_CancelledReportCannotAppearSuccessful" methodname="JUnit_CancelledReportCannotAppearSuccessful" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1371166160" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.019254" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1031" name="JUnit_UsesActiveFindingsThresholdAndExecutionStates" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.JUnit_UsesActiveFindingsThresholdAndExecutionStates" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.042664" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1028" name="JUnit_UsesActiveFindingsThresholdAndExecutionStates(Error,0)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.JUnit_UsesActiveFindingsThresholdAndExecutionStates(Error,0)" methodname="JUnit_UsesActiveFindingsThresholdAndExecutionStates" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="591177528" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.016262" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1029" name="JUnit_UsesActiveFindingsThresholdAndExecutionStates(Warning,1)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.JUnit_UsesActiveFindingsThresholdAndExecutionStates(Warning,1)" methodname="JUnit_UsesActiveFindingsThresholdAndExecutionStates" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1324147352" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.013350" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1030" name="JUnit_UsesActiveFindingsThresholdAndExecutionStates(Info,2)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.JUnit_UsesActiveFindingsThresholdAndExecutionStates(Info,2)" methodname="JUnit_UsesActiveFindingsThresholdAndExecutionStates" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1759045717" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.012241" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-suite type="ParameterizedMethod" id="1019" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.160592" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1013" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.MissingMonoScriptRule)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.MissingMonoScriptRule)" methodname="RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1519767491" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.027025" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1014" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.MissingObjectReferenceRule)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.MissingObjectReferenceRule)" methodname="RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1493342679" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.026446" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1015" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.NullCollectionEntryRule)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.NullCollectionEntryRule)" methodname="RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1017972225" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.026232" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1016" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.BuildSceneRule)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.BuildSceneRule)" methodname="RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="2019648981" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.026199" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1017" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.PrefabIntegrityRule)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.PrefabIntegrityRule)" methodname="RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1199684761" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.025515" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1018" name="RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.DuplicateAegisKeyRule)" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.RuleAsset_PreservesTypeAndConfigurationAfterReimport(MisterPxl.Aegis.DuplicateAegisKeyRule)" methodname="RuleAsset_PreservesTypeAndConfigurationAfterReimport" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1988260743" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.027650" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1020" name="Scanners_TerminateOnCyclesAndIncludeHiddenSerializedFields" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.Scanners_TerminateOnCyclesAndIncludeHiddenSerializedFields" methodname="Scanners_TerminateOnCyclesAndIncludeHiddenSerializedFields" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1024665650" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.057844" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="Settings_MigratesLegacyProfilesWithoutLosingConfiguration" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.Settings_MigratesLegacyProfilesWithoutLosingConfiguration" methodname="Settings_MigratesLegacyProfilesWithoutLosingConfiguration" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="1705993189" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.013802" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="Settings_SaveInitializesAllProfilesBeforeSerialization" fullname="MisterPxl.Aegis.Tests.AegisRegressionTests.Settings_SaveInitializesAllProfilesBeforeSerialization" methodname="Settings_SaveInitializesAllProfilesBeforeSerialization" classname="MisterPxl.Aegis.Tests.AegisRegressionTests" runstate="Runnable" seed="219623039" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.014282" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1045" name="Aegis.Valkyrie.Editor.Tests.dll" fullname="/private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-fixes-igrvh8hr/Project/Library/ScriptAssemblies/Aegis.Valkyrie.Editor.Tests.dll" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.076177" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="46070" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1046" name="MisterPxl" fullname="MisterPxl" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.075670" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1047" name="Aegis" fullname="MisterPxl.Aegis" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.075597" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1048" name="ValkyrieIntegration" fullname="MisterPxl.Aegis.ValkyrieIntegration" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.075530" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestSuite" id="1049" name="Tests" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.075432" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1038" name="AegisValkyrieRegressionTests" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.074402" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1042" name="ManagedReferenceRule_HandlesCyclesAndHiddenFields" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests.ManagedReferenceRule_HandlesCyclesAndHiddenFields" methodname="ManagedReferenceRule_HandlesCyclesAndHiddenFields" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests" runstate="Runnable" seed="2071826478" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.024056" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-suite type="ParameterizedMethod" id="1041" name="RuleAsset_SurvivesReimport" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests.RuleAsset_SurvivesReimport" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.049734" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+                  <properties />
+                  <test-case id="1039" name="RuleAsset_SurvivesReimport(MisterPxl.Aegis.ValkyrieIntegration.ValkyrieRequiredRuleAsset)" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests.RuleAsset_SurvivesReimport(MisterPxl.Aegis.ValkyrieIntegration.ValkyrieRequiredRuleAsset)" methodname="RuleAsset_SurvivesReimport" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests" runstate="Runnable" seed="1590962750" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.024789" asserts="0">
+                    <properties>
+                      <property name="retryIteration" value="0" />
+                      <property name="repeatIteration" value="0" />
+                    </properties>
+                  </test-case>
+                  <test-case id="1040" name="RuleAsset_SurvivesReimport(MisterPxl.Aegis.ValkyrieIntegration.ValkyrieManagedReferenceRuleAsset)" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests.RuleAsset_SurvivesReimport(MisterPxl.Aegis.ValkyrieIntegration.ValkyrieManagedReferenceRuleAsset)" methodname="RuleAsset_SurvivesReimport" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieRegressionTests" runstate="Runnable" seed="1388993139" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.024350" asserts="0">
+                    <properties>
+                      <property name="retryIteration" value="0" />
+                      <property name="repeatIteration" value="0" />
+                    </properties>
+                  </test-case>
+                </test-suite>
+              </test-suite>
+              <test-suite type="TestFixture" id="1043" name="AegisValkyrieTests" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieTests" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.000763" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1044" name="RequiredRule_CanBeCreated" fullname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieTests.RequiredRule_CanBeCreated" methodname="RequiredRule_CanBeCreated" classname="MisterPxl.Aegis.ValkyrieIntegration.Tests.AegisValkyrieTests" runstate="Runnable" seed="1657835412" result="Passed" start-time="2026-09-07 12:22:03Z" end-time="2026-09-07 12:22:03Z" duration="0.000211" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Saving results to: /var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-fixes-igrvh8hr/Project/Audit~/final-tests.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

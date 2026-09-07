@@ -188,7 +188,10 @@ namespace MisterPxl.Aegis.Tests
                 new AegisRuleExecutionRecord("b", "Findings Rule", AegisRuleExecutionStatus.Findings, 2, 1d, string.Empty),
                 new AegisRuleExecutionRecord("c", "Failed Rule", AegisRuleExecutionStatus.Failed, 1, 1d, "Boom")
             };
-            AegisValidationReport report = new AegisValidationReport("Test", 1d, new List<AegisFinding>(), records);
+            AegisValidationReport report = new AegisValidationReport("Test", 1d, new List<AegisFinding>
+            {
+                new AegisFinding("b", "Findings Rule", AegisSeverity.Error, "Blocking finding")
+            }, records);
             string path = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "aegis-junit-" + System.Guid.NewGuid().ToString("N") + ".xml");
 
             try
@@ -196,16 +199,12 @@ namespace MisterPxl.Aegis.Tests
                 AegisReportWriters.WriteJUnit(report, path);
                 string xml = System.IO.File.ReadAllText(path);
 
-                int failureElementCount = 0;
-                int index = 0;
-                while ((index = xml.IndexOf("<failure", index, System.StringComparison.Ordinal)) >= 0)
-                {
-                    failureElementCount++;
-                    index++;
-                }
-
-                Assert.AreEqual(2, failureElementCount);
-                Assert.IsTrue(xml.Contains("failures=\"2\""));
+                System.Xml.XmlDocument document = new System.Xml.XmlDocument();
+                document.LoadXml(xml);
+                Assert.AreEqual(1, document.SelectNodes("//failure").Count);
+                Assert.AreEqual("1", document.DocumentElement.GetAttribute("failures"));
+                Assert.AreEqual(1, document.SelectNodes("//error").Count);
+                Assert.AreEqual("1", document.DocumentElement.GetAttribute("errors"));
             }
             finally
             {

@@ -82,6 +82,7 @@ namespace MisterPxl.Aegis
     {
         public AegisRunResult Run(AegisValidationProfile profile)
         {
+            profile = profile ?? new AegisValidationProfile();
             Stopwatch stopwatch = Stopwatch.StartNew();
             List<AegisFinding> findings = new List<AegisFinding>();
             List<AegisRuleExecutionRecord> records = new List<AegisRuleExecutionRecord>();
@@ -94,7 +95,9 @@ namespace MisterPxl.Aegis
             stopwatch.Stop();
             AegisValidationReport report = CreateReport(profile, stopwatch.Elapsed.TotalMilliseconds, findings, records);
             AegisReportStore.SaveLastReport(report);
-            return AegisRunResult.Succeed(report);
+            return report.HasRuleFailures
+                ? AegisRunResult.Fail("One or more Aegis rules failed.", report: report)
+                : AegisRunResult.Succeed(report);
         }
 
         public static void ExecuteRule(
@@ -159,16 +162,8 @@ namespace MisterPxl.Aegis
             List<AegisFinding> rawFindings,
             List<AegisRuleExecutionRecord> records)
         {
-            List<AegisFinding> findings = new List<AegisFinding>(rawFindings.Count);
-            AegisSettings settings = AegisSettings.instance;
-            for (int i = 0; i < rawFindings.Count; i++)
-            {
-                AegisFinding finding = rawFindings[i];
-                if (!settings.IsSuppressed(finding))
-                    findings.Add(finding);
-            }
-
-            return new AegisValidationReport(profile.Name, durationMs, findings, records);
+            return AegisReportFinalizer.ApplySuppressions(
+                new AegisValidationReport(profile.Name, durationMs, rawFindings, records));
         }
     }
 
@@ -182,6 +177,7 @@ namespace MisterPxl.Aegis
         private readonly Action<AegisRunResult> _complete;
         private int _index;
         private bool _cancelRequested;
+        private bool _started;
 
         public AegisInteractiveRun(AegisValidationProfile profile, Action<AegisRunResult> complete)
         {
@@ -197,9 +193,10 @@ namespace MisterPxl.Aegis
 
         public void Start()
         {
-            if (IsRunning)
+            if (_started)
                 return;
 
+            _started = true;
             _stopwatch.Restart();
             IsRunning = true;
             EditorApplication.update += Tick;
@@ -213,7 +210,7 @@ namespace MisterPxl.Aegis
         private void Tick()
         {
             Stopwatch budget = Stopwatch.StartNew();
-            while (_index < _rules.Count && budget.ElapsedMilliseconds < Profile.FrameBudgetMs)
+            while (!_cancelRequested && _index < _rules.Count && budget.ElapsedMilliseconds < Profile.FrameBudgetMs)
             {
                 AegisRunner.ExecuteRule(_rules[_index], _context, _findings, _records);
                 _index++;
@@ -230,9 +227,23 @@ namespace MisterPxl.Aegis
             EditorApplication.update -= Tick;
             IsRunning = false;
             _stopwatch.Stop();
-            AegisValidationReport report = new AegisValidationReport(Profile.Name, _stopwatch.Elapsed.TotalMilliseconds, _findings, _records);
+            if (_cancelRequested)
+            {
+                for (int i = _index; i < _rules.Count; i++)
+                    _records.Add(new AegisRuleExecutionRecord(_rules[i].RuleId, _rules[i].DisplayName,
+                        AegisRuleExecutionStatus.Skipped, 0, 0, "Validation cancelled before this rule ran."));
+            }
+
+            AegisValidationReport report = AegisReportFinalizer.ApplySuppressions(
+                new AegisValidationReport(Profile.Name, _stopwatch.Elapsed.TotalMilliseconds,
+                    _findings, _records, _cancelRequested));
             AegisReportStore.SaveLastReport(report);
-            _complete?.Invoke(AegisRunResult.Succeed(report, _cancelRequested ? "Aegis validation cancelled." : null));
+            AegisRunResult result = _cancelRequested
+                ? AegisRunResult.Cancelled(report)
+                : report.HasRuleFailures
+                    ? AegisRunResult.Fail("One or more Aegis rules failed.", report: report)
+                    : AegisRunResult.Succeed(report);
+            _complete?.Invoke(result);
         }
     }
 
@@ -240,7 +251,7 @@ namespace MisterPxl.Aegis
     {
         public static void SaveLastReport(AegisValidationReport report)
         {
-            if (report == null)
+            if (report == null || report.IsCancelled)
                 return;
 
             Directory.CreateDirectory(AegisPackageInfo.ReportFolder);

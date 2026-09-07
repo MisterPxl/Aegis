@@ -9,9 +9,10 @@ namespace MisterPxl.Aegis
     public sealed class AegisSettings : ScriptableSingleton<AegisSettings>
     {
         [SerializeField] private bool _buildGateEnabled = true;
-        [SerializeField] private AegisValidationProfile _interactiveProfile;
-        [SerializeField] private AegisValidationProfile _buildProfile;
-        [SerializeField] private AegisValidationProfile _ciProfile;
+        [SerializeField] private AegisValidationProfile _interactiveProfile = CreateProfile("Interactive", 8);
+        [SerializeField] private AegisValidationProfile _buildProfile = CreateProfile("Build", 1);
+        [SerializeField] private AegisValidationProfile _ciProfile = CreateProfile("CI", 1);
+        [SerializeField] private int _profileSchemaVersion;
         [SerializeField] private List<AegisSuppression> _suppressions = new List<AegisSuppression>();
 
         public bool BuildGateEnabled
@@ -24,9 +25,9 @@ namespace MisterPxl.Aegis
             }
         }
 
-        public AegisValidationProfile InteractiveProfile => EnsureProfile(ref _interactiveProfile, "Interactive", AegisSeverity.Error, 8);
-        public AegisValidationProfile BuildProfile => EnsureProfile(ref _buildProfile, "Build", AegisSeverity.Error, 1);
-        public AegisValidationProfile CiProfile => EnsureProfile(ref _ciProfile, "CI", AegisSeverity.Error, 1);
+        public AegisValidationProfile InteractiveProfile { get { EnsureProfiles(); return _interactiveProfile; } }
+        public AegisValidationProfile BuildProfile { get { EnsureProfiles(); return _buildProfile; } }
+        public AegisValidationProfile CiProfile { get { EnsureProfiles(); return _ciProfile; } }
         public IReadOnlyList<AegisSuppression> Suppressions => _suppressions;
 
         public AegisValidationProfile GetProfile(string profileName)
@@ -101,25 +102,47 @@ namespace MisterPxl.Aegis
 
         public void Save()
         {
+            EnsureProfiles();
             Save(true);
         }
 
-        private static AegisValidationProfile EnsureProfile(
-            ref AegisValidationProfile profile,
-            string name,
-            AegisSeverity threshold,
-            int frameBudgetMs)
+        private void OnEnable()
         {
-            if (profile != null)
-                return profile;
+            EnsureProfiles();
+        }
 
-            profile = new AegisValidationProfile
+        private void EnsureProfiles()
+        {
+            _interactiveProfile = _interactiveProfile ?? CreateProfile("Interactive", 8);
+            _buildProfile = _buildProfile ?? CreateProfile("Build", 1);
+            _ciProfile = _ciProfile ?? CreateProfile("CI", 1);
+
+            if (_profileSchemaVersion >= 1)
+                return;
+
+            MigrateProfile(_buildProfile, "Build");
+            MigrateProfile(_ciProfile, "CI");
+            _profileSchemaVersion = 1;
+        }
+
+        private static void MigrateProfile(AegisValidationProfile profile, string name)
+        {
+            // Older saves materialized uninitialized inline profiles with Interactive defaults.
+            // Preserve thresholds, filters, disabled rules and non-default frame budgets.
+            if (string.Equals(profile.Name, "Interactive", StringComparison.OrdinalIgnoreCase))
             {
-                Name = name,
-                FailureThreshold = threshold,
-                FrameBudgetMs = frameBudgetMs
+                profile.Name = name;
+                if (profile.FrameBudgetMs == 8)
+                    profile.FrameBudgetMs = 1;
+            }
+        }
+
+        private static AegisValidationProfile CreateProfile(string name, int frameBudgetMs)
+        {
+            return new AegisValidationProfile
+            {
+                Name = name, FailureThreshold = AegisSeverity.Error, FrameBudgetMs = frameBudgetMs
             };
-            return profile;
         }
     }
 }

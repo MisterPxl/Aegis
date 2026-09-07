@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="10" result="Passed" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.2894704">
+  <test-suite type="TestSuite" id="1000" name="UnityProject~" fullname="UnityProject~" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.289470" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1021" name="Aegis.Editor.Tests.dll" fullname="/private/var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/UnityProject~/Library/ScriptAssemblies/Aegis.Editor.Tests.dll" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.176486" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="30609" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1022" name="MisterPxl" fullname="MisterPxl" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.175964" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1023" name="Aegis" fullname="MisterPxl.Aegis" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.175724" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1024" name="Tests" fullname="MisterPxl.Aegis.Tests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.175469" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1010" name="AegisCoreTests" fullname="MisterPxl.Aegis.Tests.AegisCoreTests" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.174687" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1017" name="Fingerprint_IgnoresMessageForAnchoredFindings" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_IgnoresMessageForAnchoredFindings" methodname="Fingerprint_IgnoresMessageForAnchoredFindings" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="891331605" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.008438" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="Fingerprint_IsDeterministic" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_IsDeterministic" methodname="Fingerprint_IsDeterministic" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1954130075" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.000191" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1018" name="Fingerprint_UsesMessageForUnanchoredFindings" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Fingerprint_UsesMessageForUnanchoredFindings" methodname="Fingerprint_UsesMessageForUnanchoredFindings" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="119062375" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.000867" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="JUnit_FailuresAttributeMatchesFailureElements" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.JUnit_FailuresAttributeMatchesFailureElements" methodname="JUnit_FailuresAttributeMatchesFailureElements" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="484720848" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.004565" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" methodname="MissingObjectReferenceRule_ScansSceneWithoutLoadingSceneObjectsAsAssets" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="231892436" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.095890" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="Profile_ExcludesConfiguredFolders" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Profile_ExcludesConfiguredFolders" methodname="Profile_ExcludesConfiguredFolders" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="2059341894" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.000322" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="Report_CountsFindingsBySeverity" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Report_CountsFindingsBySeverity" methodname="Report_CountsFindingsBySeverity" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="70414732" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.000373" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="Runner_IsolatesRuleExceptions" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Runner_IsolatesRuleExceptions" methodname="Runner_IsolatesRuleExceptions" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1664918382" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.002898" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" methodname="SceneScan_DoesNotCloseSceneAlreadyOpenInEditor" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="1718873337" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.052063" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="Settings_TryGetProfile_RejectsUnknownName" fullname="MisterPxl.Aegis.Tests.AegisCoreTests.Settings_TryGetProfile_RejectsUnknownName" methodname="Settings_TryGetProfile_RejectsUnknownName" classname="MisterPxl.Aegis.Tests.AegisCoreTests" runstate="Runnable" seed="238080140" result="Passed" start-time="2026-09-07 10:12:16Z" end-time="2026-09-07 10:12:16Z" duration="0.001068" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /var/folders/_r/3md3zthd0x7f81938wk7q5640000gp/T/aegis-audit-lbua53c5/UnityProject~/Audit~/baseline.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

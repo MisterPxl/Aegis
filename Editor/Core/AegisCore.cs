@@ -170,6 +170,7 @@ namespace MisterPxl.Aegis
         [SerializeField] private double _durationMs;
         [SerializeField] private List<AegisFinding> _findings;
         [SerializeField] private List<AegisRuleExecutionRecord> _rules;
+        [SerializeField] private bool _isCancelled;
 
         private AegisValidationReport()
         {
@@ -179,7 +180,8 @@ namespace MisterPxl.Aegis
             string profileName,
             double durationMs,
             List<AegisFinding> findings,
-            List<AegisRuleExecutionRecord> rules)
+            List<AegisRuleExecutionRecord> rules,
+            bool isCancelled = false)
         {
             _generatedUtc = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture);
             _unityVersion = Application.unityVersion;
@@ -188,6 +190,7 @@ namespace MisterPxl.Aegis
             _durationMs = durationMs;
             _findings = findings ?? new List<AegisFinding>();
             _rules = rules ?? new List<AegisRuleExecutionRecord>();
+            _isCancelled = isCancelled;
         }
 
         public string GeneratedUtc => _generatedUtc;
@@ -197,6 +200,16 @@ namespace MisterPxl.Aegis
         public double DurationMs => _durationMs;
         public IReadOnlyList<AegisFinding> Findings => _findings;
         public IReadOnlyList<AegisRuleExecutionRecord> Rules => _rules;
+        public bool IsCancelled => _isCancelled;
+        public bool HasRuleFailures => _rules.Exists(rule => rule.Status == AegisRuleExecutionStatus.Failed);
+
+        internal AegisValidationReport WithResults(List<AegisFinding> findings, List<AegisRuleExecutionRecord> rules)
+        {
+            AegisValidationReport copy = (AegisValidationReport)MemberwiseClone();
+            copy._findings = findings;
+            copy._rules = rules;
+            return copy;
+        }
 
         public int ErrorCount => Count(AegisSeverity.Error);
         public int WarningCount => Count(AegisSeverity.Warning);
@@ -256,10 +269,19 @@ namespace MisterPxl.Aegis
         public string Message { get; }
         public AegisValidationReport Report { get; }
         public Exception Exception { get; }
+        public bool IsCancelled => Report != null && Report.IsCancelled;
 
         public static AegisRunResult Succeed(AegisValidationReport report, string message = null)
         {
+            if (report != null && report.IsCancelled)
+                return Cancelled(report);
+
             return new AegisRunResult(true, message ?? "Aegis validation completed.", report, null);
+        }
+
+        public static AegisRunResult Cancelled(AegisValidationReport report)
+        {
+            return new AegisRunResult(false, "Aegis validation cancelled; results are incomplete.", report, null);
         }
 
         public static AegisRunResult Fail(string message, Exception exception = null, AegisValidationReport report = null)

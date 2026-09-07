@@ -1,0 +1,4 @@
+Assets/Samples/Aegis/0.2.0/Custom Rule/AegisCustomRuleExample.cs(1,7): error CS0246: The type or namespace name 'MisterPxl' could not be found (are you missing a using directive or an assembly reference?)
+Assets/Samples/Aegis/0.2.0/Custom Rule/AegisCustomRuleExample.cs(8,43): error CS0246: The type or namespace name 'AegisRuleAsset' could not be found (are you missing a using directive or an assembly reference?)
+Assets/Samples/Aegis/0.2.0/Custom Rule/AegisCustomRuleExample.cs(10,39): error CS0246: The type or namespace name 'AegisValidationContext' could not be found (are you missing a using directive or an assembly reference?)
+Assets/Samples/Aegis/0.2.0/Custom Rule/AegisCustomRuleExample.cs(10,71): error CS0246: The type or namespace name 'IAegisFindingSink' could not be found (are you missing a using directive or an assembly reference?)

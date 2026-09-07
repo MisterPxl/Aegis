@@ -25,20 +25,22 @@ namespace MisterPxl.Aegis
                 }
 
                 AegisRunResult result = new AegisRunner().Run(profile);
-                if (!result.Success || result.Report == null)
+                if (result.Report == null)
                 {
                     Debug.LogError(result.Message);
-                    exitCode = AegisExitCode.ConfigurationError;
+                    exitCode = AegisExitCode.InternalError;
                 }
                 else
                 {
                     AegisReportWriters.WriteJson(result.Report, jsonPath);
-                    AegisReportWriters.WriteJUnit(result.Report, junitPath);
+                    AegisReportWriters.WriteJUnit(result.Report, junitPath, profile.FailureThreshold);
                     string summary = AegisReportWriters.FormatSummary(result.Report);
                     Debug.Log(summary);
                     Debug.Log($"Aegis JSON: {Path.GetFullPath(jsonPath)}");
                     Debug.Log($"Aegis JUnit: {Path.GetFullPath(junitPath)}");
-                    exitCode = result.Report.HasBlockingFindings(profile.FailureThreshold)
+                    exitCode = !result.Success
+                        ? AegisExitCode.InternalError
+                        : result.Report.HasBlockingFindings(profile.FailureThreshold)
                         ? AegisExitCode.BlockingFindings
                         : AegisExitCode.Success;
                 }

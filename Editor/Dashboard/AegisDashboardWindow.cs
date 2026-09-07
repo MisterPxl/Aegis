@@ -165,11 +165,15 @@ namespace MisterPxl.Aegis
             AegisValidationProfile profile = AegisSettings.instance.GetProfile("Interactive");
             _run = new AegisInteractiveRun(profile, result =>
             {
+                if (this == null)
+                    return;
+
                 _report = result.Report;
                 RefreshFilter();
                 Repaint();
             });
             _run.Start();
+            UpdateFixButtons();
             _summary.text = "Aegis validation running...";
         }
 
@@ -181,7 +185,7 @@ namespace MisterPxl.Aegis
 
         private void RunSelectedRule()
         {
-            if (_selectedFinding == null)
+            if (_selectedFinding == null || (_run != null && _run.IsRunning))
                 return;
 
             List<AegisRuleAsset> rules = AegisRuleDiscovery.DiscoverRules();
@@ -229,7 +233,9 @@ namespace MisterPxl.Aegis
             }
 
             records.AddRange(ruleRecords);
-            _report = new AegisValidationReport(context.Profile.Name, _report != null ? _report.DurationMs : 0d, findings, records);
+            _report = AegisReportFinalizer.ApplySuppressions(new AegisValidationReport(
+                context.Profile.Name, _report != null ? _report.DurationMs : 0d, findings, records,
+                _report != null && _report.IsCancelled));
             AegisReportStore.SaveLastReport(_report);
             RefreshFilter();
         }
@@ -315,11 +321,14 @@ namespace MisterPxl.Aegis
                 _selectedFinding.Fingerprint,
                 "Suppressed from Aegis dashboard.",
                 Environment.UserName);
+            _report = AegisReportFinalizer.ApplySuppressions(_report);
+            AegisReportStore.SaveLastReport(_report);
             RefreshFilter();
         }
 
         private void RefreshFilter()
         {
+            _report = AegisReportFinalizer.ApplySuppressions(_report);
             _filteredFindings.Clear();
             if (_report != null)
             {
@@ -338,8 +347,15 @@ namespace MisterPxl.Aegis
                 }
             }
 
+            if (_selectedFinding != null && !_filteredFindings.Contains(_selectedFinding))
+            {
+                _selectedFinding = null;
+                _list?.ClearSelection();
+            }
+
             _list?.RefreshItems();
             UpdateSummary();
+            UpdateDetails();
             UpdateFixButtons();
         }
 
@@ -347,6 +363,13 @@ namespace MisterPxl.Aegis
         {
             if (_fixButton == null || _fixSafeButton == null)
                 return;
+
+            if (_run != null && _run.IsRunning)
+            {
+                _fixButton.SetEnabled(false);
+                _fixSafeButton.SetEnabled(false);
+                return;
+            }
 
             // Fix actions are not serialized, so reports reloaded from disk have none;
             // disabling the buttons makes that state visible instead of silently doing nothing.

@@ -46,9 +46,13 @@ Exit codes:
 - `3`: configuration error
 - `4`: internal error
 
+JUnit reports use the chosen profile's failure threshold and effective, unsuppressed findings. Disabled rules are skipped; rule execution exceptions are reported as errors and return exit code `4`. Both report files are exported when a rule fails. When calling `AegisReportWriters.WriteJUnit` directly, pass the profile's threshold as its third argument (the default is `Error`).
+
 ## Creating Rules
 
 Create a subclass of `AegisRuleAsset`, then create an asset from its `CreateAssetMenu` entry. No central registry is required.
+
+Place each rule in an `Editor` folder or Editor-only assembly, in a script matching the class name (for example `Editor/MyRule.cs`).
 
 ```csharp
 public sealed class MyRule : AegisRuleAsset
