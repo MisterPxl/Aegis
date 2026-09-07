@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MisterPxl.Aegis
 {
-    [CreateAssetMenu(fileName = "NullCollectionEntryRule", menuName = "Aegis/Rules/Null Collection Entry")]
+    [CreateAssetMenu(fileName = "NullCollectionEntryRule", menuName = "Astra/Aegis/Rules/Null Collection Entry")]
     public sealed class NullCollectionEntryRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

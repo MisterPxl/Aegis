@@ -1,4 +1,9 @@
-# Aegis Project Validation
+# Astra Aegis — Project Validation
+
+Part of the **Astra** family. This package works independently of the Astra framework.
+
+The Astra menu labels described here are unreleased. Existing published tags keep
+their previous labels until the next release; package IDs and C# APIs are unchanged.
 
 Aegis is an Editor-only Unity package for project health validation. It discovers validation rules as assets, runs them in an interactive dashboard, blocks builds when configured, and exports deterministic reports for CI.
 
@@ -10,7 +15,7 @@ Add the package from Git:
 https://github.com/MisterPxl/Aegis.git#v0.2.0
 ```
 
-Optional addons:
+Optional integrations:
 
 ```text
 https://github.com/MisterPxl/Aegis.git?path=/Addons~/Valkyrie#v0.2.0
@@ -19,7 +24,7 @@ https://github.com/MisterPxl/Aegis.git?path=/Addons~/Helios#v0.2.0
 
 ## Quick Start
 
-Open `Tools > Aegis > Project Health`, then click `Run`.
+Open `Tools > Astra > Aegis > Project Health`, then click `Run`.
 
 Aegis stores the latest report in `Library/Aegis/last-report.json`. This file is intentionally outside `Assets/`.
 
@@ -67,3 +72,22 @@ public sealed class MyRule : AegisRuleAsset
 ## Fixes
 
 Findings may expose `IAegisFixAction`. Safe fixes can be applied through `Fix All Safe`; review-required or destructive fixes need explicit confirmation.
+
+## Astra conventions
+
+See [Astra conventions](Documentation~/AstraConventions.md) for product identity,
+menu paths, terminology and the staged API migration policy.
+
+Menu migration: `Tools > Aegis` is now `Tools > Astra > Aegis`.
+
+## Tests
+
+Add `com.misterpxl.aegis` to the consumer manifest’s `testables` and run its
+EditMode suite in Unity Test Runner. Include each integration in `testables` when
+validating that integration.
+
+## Removal
+
+Remove Aegis integrations first, then project-owned custom rules and rule assets
+that reference Aegis. Remove the base package through Package Manager. Keep reports
+from `Library/Aegis` separately if needed; the package does not delete project data.

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MisterPxl.Aegis
 {
-    [CreateAssetMenu(fileName = "BuildSceneRule", menuName = "Aegis/Rules/Build Scene")]
+    [CreateAssetMenu(fileName = "BuildSceneRule", menuName = "Astra/Aegis/Rules/Build Scene")]
     public sealed class BuildSceneRule : AegisRuleAsset
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

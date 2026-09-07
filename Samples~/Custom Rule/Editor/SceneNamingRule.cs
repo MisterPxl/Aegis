@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aegis.Samples
 {
-    [CreateAssetMenu(fileName = "SceneNamingRule", menuName = "Aegis/Samples/Scene Naming Rule")]
+    [CreateAssetMenu(fileName = "SceneNamingRule", menuName = "Astra/Aegis/Samples/Scene Naming Rule")]
     public sealed class SceneNamingRule : AegisRuleAsset
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

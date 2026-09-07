@@ -20,16 +20,15 @@ namespace MisterPxl.Aegis
         private Button _fixSafeButton;
         private AegisFinding _selectedFinding;
 
-        [MenuItem("Tools/Aegis/Project Health")]
+        [MenuItem("Tools/Astra/Aegis/Project Health")]
         public static void Open()
         {
             AegisDashboardWindow window = GetWindow<AegisDashboardWindow>();
-            window.titleContent = new GUIContent("Aegis Project Health");
             window.minSize = new Vector2(780f, 480f);
             window.Show();
         }
 
-        [MenuItem("Tools/Aegis/Run Validation")]
+        [MenuItem("Tools/Astra/Aegis/Run Validation")]
         public static void RunFromMenu()
         {
             AegisDashboardWindow window = GetWindow<AegisDashboardWindow>();
@@ -37,7 +36,7 @@ namespace MisterPxl.Aegis
             window.StartRun();
         }
 
-        [MenuItem("Tools/Aegis/Diagnostics/List Rules")]
+        [MenuItem("Tools/Astra/Aegis/Diagnostics/List Rules")]
         public static void ListRules()
         {
             List<AegisRuleAsset> rules = AegisRuleDiscovery.DiscoverRules();
@@ -50,6 +49,7 @@ namespace MisterPxl.Aegis
 
         private void OnEnable()
         {
+            titleContent = new GUIContent("Astra Aegis");
             _report = AegisReportStore.LoadLastReport();
             BuildUi();
             RefreshFilter();

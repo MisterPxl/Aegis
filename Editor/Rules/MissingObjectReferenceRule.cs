@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MisterPxl.Aegis
 {
-    [CreateAssetMenu(fileName = "MissingObjectReferenceRule", menuName = "Aegis/Rules/Missing Object Reference")]
+    [CreateAssetMenu(fileName = "MissingObjectReferenceRule", menuName = "Astra/Aegis/Rules/Missing Object Reference")]
     public sealed class MissingObjectReferenceRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

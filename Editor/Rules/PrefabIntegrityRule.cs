@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MisterPxl.Aegis
 {
-    [CreateAssetMenu(fileName = "PrefabIntegrityRule", menuName = "Aegis/Rules/Prefab Integrity")]
+    [CreateAssetMenu(fileName = "PrefabIntegrityRule", menuName = "Astra/Aegis/Rules/Prefab Integrity")]
     public sealed class PrefabIntegrityRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

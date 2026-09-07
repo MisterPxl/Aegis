@@ -8,7 +8,7 @@ using Valkyrie;
 
 namespace MisterPxl.Aegis.ValkyrieIntegration
 {
-    [CreateAssetMenu(fileName = "ValkyrieRequiredRule", menuName = "Aegis/Valkyrie/Required Rule")]
+    [CreateAssetMenu(fileName = "ValkyrieRequiredRule", menuName = "Astra/Aegis/Valkyrie/Required Rule")]
     public sealed class ValkyrieRequiredRuleAsset : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

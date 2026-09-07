@@ -5,7 +5,7 @@ Rules are `ScriptableObject` assets. Aegis discovers them with `AssetDatabase`, 
 1. Create a class derived from `AegisRuleAsset` in an `Editor` folder or an Editor-only assembly. Use one rule class per script, with a filename matching the class name.
 2. Add `CreateAssetMenu`.
 3. Create a rule asset in the project or package.
-4. Run `Tools > Aegis > Project Health`.
+4. Run `Tools > Astra > Aegis > Project Health`.
 
 Rules should emit findings through `IAegisFindingSink` and keep build/CI behavior side-effect free.
 

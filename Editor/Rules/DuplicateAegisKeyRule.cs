@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MisterPxl.Aegis
 {
-    [CreateAssetMenu(fileName = "DuplicateAegisKeyRule", menuName = "Aegis/Rules/Duplicate Aegis Key")]
+    [CreateAssetMenu(fileName = "DuplicateAegisKeyRule", menuName = "Astra/Aegis/Rules/Duplicate Aegis Key")]
     public sealed class DuplicateAegisKeyRule : AegisRuleAsset
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)

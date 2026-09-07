@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Adopt Astra display names, menus, integration terminology and shared documentation conventions. Package IDs and C# APIs remain unchanged.
+
 - Fixed: update the Helios integration to the 2.x report artifact API and JSON MIME type.
 - Fixed: require Helios 2.3.1 and exclude the integration's Runtime, Editor and tests when
   `HELIOS_DEBUGGER_DISABLE` is defined.

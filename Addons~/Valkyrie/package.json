@@ -1,7 +1,7 @@
 {
   "name": "com.misterpxl.aegis.valkyrie",
   "version": "0.2.0",
-  "displayName": "Aegis Valkyrie Integration",
+  "displayName": "Astra Aegis — Valkyrie Integration",
   "description": "Optional Aegis rules for Valkyrie attributes and polymorphic collections.",
   "unity": "6000.0",
   "dependencies": {
@@ -10,5 +10,9 @@
   },
   "author": {
     "name": "Alexis Gomes"
-  }
+  },
+  "license": "MIT",
+  "documentationUrl": "https://github.com/MisterPxl/Aegis/blob/main/Addons~/Valkyrie/README.md",
+  "changelogUrl": "https://github.com/MisterPxl/Aegis/blob/main/Addons~/Valkyrie/CHANGELOG.md",
+  "licensesUrl": "https://github.com/MisterPxl/Aegis/blob/main/Addons~/Valkyrie/LICENSE.md"
 }

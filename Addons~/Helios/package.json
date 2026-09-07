@@ -1,7 +1,7 @@
 {
   "name": "com.misterpxl.aegis.helios",
   "version": "0.2.0",
-  "displayName": "Aegis Helios Integration",
+  "displayName": "Astra Aegis — Helios Integration",
   "description": "Optional Helios system info and bug report attachment for Aegis build validation snapshots.",
   "unity": "6000.0",
   "dependencies": {
@@ -10,5 +10,9 @@
   },
   "author": {
     "name": "Alexis Gomes"
-  }
+  },
+  "license": "MIT",
+  "documentationUrl": "https://github.com/MisterPxl/Aegis/blob/main/Addons~/Helios/README.md",
+  "changelogUrl": "https://github.com/MisterPxl/Aegis/blob/main/Addons~/Helios/CHANGELOG.md",
+  "licensesUrl": "https://github.com/MisterPxl/Aegis/blob/main/Addons~/Helios/LICENSE.md"
 }

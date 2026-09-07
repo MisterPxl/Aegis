@@ -1,7 +1,7 @@
 {
   "name": "com.misterpxl.aegis",
   "version": "0.2.0",
-  "displayName": "Aegis Project Validation",
+  "displayName": "Astra Aegis — Project Validation",
   "description": "Editor-only project validation dashboard, build gate and CI runner for Unity projects.",
   "unity": "6000.0",
   "samples": [
@@ -18,5 +18,9 @@
   ],
   "author": {
     "name": "Alexis Gomes"
-  }
+  },
+  "license": "MIT",
+  "documentationUrl": "https://github.com/MisterPxl/Aegis/blob/main/README.md",
+  "changelogUrl": "https://github.com/MisterPxl/Aegis/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/MisterPxl/Aegis/blob/main/LICENSE"
 }

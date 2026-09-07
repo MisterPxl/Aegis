@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MisterPxl.Aegis
 {
-    [CreateAssetMenu(fileName = "MissingMonoScriptRule", menuName = "Aegis/Rules/Missing Mono Script")]
+    [CreateAssetMenu(fileName = "MissingMonoScriptRule", menuName = "Astra/Aegis/Rules/Missing Mono Script")]
     public sealed class MissingMonoScriptRule : AegisProjectAssetRule
     {
         public override void Evaluate(AegisValidationContext context, IAegisFindingSink sink)
