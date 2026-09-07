@@ -4,7 +4,8 @@
   "references": [
     "Aegis.Editor",
     "Aegis.Valkyrie.Editor",
-    "Valkyrie.Runtime"
+    "Valkyrie.Runtime",
+    "Valkyrie.Editor"
   ],
   "includePlatforms": [
     "Editor"
@@ -20,7 +21,7 @@
   "versionDefines": [
     {
       "name": "com.misterpxl.valkyrie",
-      "expression": "1.0.0",
+      "expression": "[1.5.0,2.0.0)",
       "define": "AEGIS_VALKYRIE_AVAILABLE"
     }
   ],

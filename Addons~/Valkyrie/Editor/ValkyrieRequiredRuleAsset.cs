@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Reflection;
-using MisterPxl.Aegis;
 using UnityEditor;
 using UnityEngine;
 using Valkyrie;
+using Valkyrie.Editor;
 
 namespace MisterPxl.Aegis.ValkyrieIntegration
 {
@@ -21,42 +20,45 @@ namespace MisterPxl.Aegis.ValkyrieIntegration
             if (obj == null)
                 return;
 
-            FieldInfo[] fields = obj.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            for (int i = 0; i < fields.Length; i++)
+            using (var serialized = new SerializedObject(obj))
             {
-                FieldInfo field = fields[i];
-                RequiredAttribute required = field.GetCustomAttribute<RequiredAttribute>(true);
-                if (required == null)
-                    continue;
+                foreach (SerializedProperty property in AegisSerializedProperties.Enumerate(serialized))
+                {
+                    // Attribute ownership belongs to the serialized field, not its list elements.
+                    if (property.name.StartsWith("data[", StringComparison.Ordinal))
+                        continue;
+                    object[] owners = SerializedPropertyContext.GetOwners(property);
+                    FieldInfo field = FindField(owners.Length == 0 ? null : owners[0]?.GetType(), property.name);
+                    RequiredAttribute required = field?.GetCustomAttribute<RequiredAttribute>(true);
+                    if (required == null)
+                        continue;
 
-                object value = field.GetValue(obj);
-                if (!IsMissing(value))
-                    continue;
+                    // Use the inspector's presence semantics, including managed/exposed references.
+                    string message = PropertyRenderer.GetRequiredMessage(property, required);
+                    if (message == null)
+                        continue;
 
-                string message = string.IsNullOrWhiteSpace(required.Message)
-                    ? $"Required field '{ObjectNames.NicifyVariableName(field.Name)}' is missing."
-                    : required.Message;
-                sink.Add(CreateFinding(
-                    message,
-                    assetPath: path,
-                    globalObjectId: AegisObjectId.TryGet(obj),
-                    propertyPath: field.Name,
-                    code: "Aegis.Valkyrie.Required"));
+                    sink.Add(CreateFinding(
+                        message,
+                        assetPath: path,
+                        globalObjectId: AegisObjectId.TryGet(obj),
+                        propertyPath: property.propertyPath,
+                        code: "Aegis.Valkyrie.Required"));
+                }
             }
         }
 
-        private static bool IsMissing(object value)
+        private static FieldInfo FindField(Type type, string name)
         {
-            if (value == null)
-                return true;
-
-            if (value is string text)
-                return string.IsNullOrWhiteSpace(text);
-
-            if (value is UnityEngine.Object unityObject)
-                return unityObject == null;
-
-            return false;
+            // Validation includes hidden serialized fields; the inspector's layout cache omits them.
+            for (Type current = type; current != null; current = current.BaseType)
+            {
+                FieldInfo field = current.GetField(name, BindingFlags.Instance | BindingFlags.Public
+                    | BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
+                if (field != null)
+                    return field;
+            }
+            return null;
         }
     }
 }

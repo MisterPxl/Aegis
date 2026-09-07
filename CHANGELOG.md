@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Fix nested Valkyrie `[Required]` validation by sharing inspector presence checks and messages, with serialized property paths and cycle-safe traversal.
+- Require the Valkyrie 1.5 nested-inspector Editor helpers; add parity, inheritance, collection and asset reimport regressions.
+
 - Adopt Astra display names, menus, integration terminology and shared documentation conventions. Package IDs and C# APIs remain unchanged.
 
 - Fixed: update the Helios integration to the 2.x report artifact API and JSON MIME type.
