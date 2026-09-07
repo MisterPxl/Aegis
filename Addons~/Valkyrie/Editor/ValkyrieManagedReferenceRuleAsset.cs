@@ -4,7 +4,7 @@ using System.Reflection;
 using Astra.Aegis;
 using UnityEditor;
 using UnityEngine;
-using Valkyrie;
+using global::Astra.Valkyrie;
 
 namespace Astra.Aegis.Integrations.Valkyrie
 {

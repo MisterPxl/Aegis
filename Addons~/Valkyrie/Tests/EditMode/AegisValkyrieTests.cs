@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using UnityEngine;
-using Valkyrie;
+using global::Astra.Valkyrie;
 
 namespace Astra.Aegis.Integrations.Valkyrie.Tests
 {

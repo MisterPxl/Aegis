@@ -2,8 +2,8 @@ using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
-using Valkyrie;
-using Valkyrie.Editor;
+using global::Astra.Valkyrie;
+using global::Astra.Valkyrie.Editor;
 
 namespace Astra.Aegis.Integrations.Valkyrie
 {

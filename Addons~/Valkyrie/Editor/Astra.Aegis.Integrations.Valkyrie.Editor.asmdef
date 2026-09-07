@@ -3,8 +3,8 @@
   "rootNamespace": "Astra.Aegis.Integrations.Valkyrie",
   "references": [
     "Astra.Aegis.Editor",
-    "Valkyrie.Runtime",
-    "Valkyrie.Editor"
+    "Astra.Valkyrie.Annotations",
+    "Astra.Valkyrie.Editor"
   ],
   "includePlatforms": [
     "Editor"
@@ -21,7 +21,7 @@
   "versionDefines": [
     {
       "name": "com.misterpxl.valkyrie",
-      "expression": "[1.5.0,2.0.0)",
+      "expression": "[2.0.0,3.0.0)",
       "define": "AEGIS_VALKYRIE_AVAILABLE"
     },
     {

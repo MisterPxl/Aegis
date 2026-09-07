@@ -5,6 +5,8 @@ Part of the **Astra** family. This package works independently of the Astra fram
 This branch contains the **1.0.0 migration candidate**: namespaces and assemblies
 have changed. Read [the migration guide](Documentation~/Migration-1.0/README.md)
 before upgrading an existing project. No 1.0 release tag is published yet.
+The optional Valkyrie integration is now a 2.0 candidate for Valkyrie 2.x;
+Aegis itself and its Helios integration remain at 1.0.
 
 Aegis is an Editor-only Unity package for project health validation. It discovers validation rules as assets, runs them in an interactive dashboard, blocks builds when configured, and exports deterministic reports for CI.
 

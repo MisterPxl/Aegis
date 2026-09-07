@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0 — Valkyrie 2.x migration candidate (unreleased)
+
+- Reference Astra Valkyrie annotations and Editor APIs; constrain this integration to Valkyrie 2.x.
+- Preserve rule classes, GUIDs, fallback IDs and serialized data; Aegis remains at 1.x.
+
+
 ## 1.0.0 — migration candidate (unreleased)
 
 - Move C# namespaces and assemblies to Astra.Aegis and Astra.Aegis.Integrations.

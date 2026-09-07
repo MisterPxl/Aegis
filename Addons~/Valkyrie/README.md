@@ -1,7 +1,7 @@
 # Astra Aegis — Valkyrie Integration
 
 An optional **Astra integration**. Install its prerequisites explicitly; the base
-packages remain usable independently. This is the **1.0.0 migration candidate**; it requires Aegis 1.x and uses the
+packages remain usable independently. This is the **2.0.0 migration candidate**; it requires Aegis 1.x and uses the
 `Astra.Aegis.Integrations` namespaces. Existing tags retain the old API.
 
 Optional package:
@@ -24,7 +24,7 @@ For local development and validation, copy each package into its own `Packages/<
 The manifest declares these package versions:
 
 - `com.misterpxl.aegis`: `1.0.0` (compatible 1.x).
-- `com.misterpxl.valkyrie`: `1.5.0` (compatible 1.x with the nested-inspector helpers).
+- `com.misterpxl.valkyrie`: `2.0.0` (compatible 2.x; uses the Astra annotations and Editor APIs).
 
 Install the Astra base packages explicitly in the consumer manifest, using the
 Git URLs from their READMEs. Git packages are not fetched transitively from
