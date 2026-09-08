@@ -1,8 +1,8 @@
-using HeliosApi = global::HeliosDebugger.Helios;
+using HeliosApi = global::Astra.Helios.Helios;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using HeliosDebugger;
+using global::Astra.Helios;
 using UnityEngine;
 
 namespace Astra.Aegis.Integrations.Helios

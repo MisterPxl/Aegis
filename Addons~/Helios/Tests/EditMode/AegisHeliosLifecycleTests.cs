@@ -1,6 +1,6 @@
-using HeliosApi = global::HeliosDebugger.Helios;
+using HeliosApi = global::Astra.Helios.Helios;
 using System.Linq;
-using HeliosDebugger;
+using global::Astra.Helios;
 using NUnit.Framework;
 
 namespace Astra.Aegis.Integrations.Helios.Tests

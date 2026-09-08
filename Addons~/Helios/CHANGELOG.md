@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0 — migration candidate (unreleased)
+
+- Target Helios 3.x Astra namespaces and assemblies; update runtime, Editor and test version constraints together.
+- Keep Aegis 1.x, snapshot serialization, report formats and passive lifecycle behavior.
+
 ## 1.0.0 — migration candidate (unreleased)
 
 - Move C# namespaces and assemblies to Astra.Aegis and Astra.Aegis.Integrations.

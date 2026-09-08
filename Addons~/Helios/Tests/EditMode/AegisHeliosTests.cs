@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using HeliosDebugger;
+using global::Astra.Helios;
 using NUnit.Framework;
 using UnityEngine;
 

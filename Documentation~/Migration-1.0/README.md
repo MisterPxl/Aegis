@@ -2,8 +2,9 @@
 
 Compatibility update: the current Valkyrie integration 2.0 targets Valkyrie 2.x.
 The original Aegis 1.0 qualification below used integration 1.0 and Valkyrie 1.5.
-Use the current Astra catalog when upgrading both products; Aegis core and its
-Helios integration retain their 1.x API.
+The current Helios integration 2.0 targets Helios 3.x. Use the current Astra
+catalog when upgrading these products; Aegis core retains its 1.x API.
+The numbered procedure below describes the original 1.0 combination.
 
 This is the first Astra API migration, published on `codex/astra-foundation`.
 It is not a tagged release. Install the exact candidate revision recorded in the

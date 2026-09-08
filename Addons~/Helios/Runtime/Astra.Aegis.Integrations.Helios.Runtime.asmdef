@@ -2,7 +2,7 @@
   "name": "Astra.Aegis.Integrations.Helios.Runtime",
   "rootNamespace": "Astra.Aegis.Integrations.Helios",
   "references": [
-    "HeliosDebugger.Runtime"
+    "Astra.Helios.Runtime"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
@@ -18,7 +18,7 @@
   "versionDefines": [
     {
       "name": "com.misterpxl.helios-debugger",
-      "expression": "[2.4.0,3.0.0)",
+      "expression": "[3.0.0,4.0.0)",
       "define": "AEGIS_HELIOS_AVAILABLE"
     },
     {
