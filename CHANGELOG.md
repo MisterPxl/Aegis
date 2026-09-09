@@ -1,14 +1,11 @@
 # Changelog
 
-## 1.0.0 — migration candidate (unreleased)
+## 1.0.0 - 2026-09-09
 
 - Move C# namespaces and assemblies to Astra.Aegis and Astra.Aegis.Integrations.
 - Preserve script/assembly GUIDs and declare old type identities for Unity serialization.
 - Preserve built-in rule IDs, diagnostic codes, profile settings and report formats.
 - Update consumers and asmdef references together; the old CLI entry point remains as a forwarding wrapper.
-
-
-## Unreleased
 
 - Prepare the Helios integration 0.3.0 candidate for Helios 2.4.0 lifecycle notifications.
 - Replace the 30-second poller with a disposable passive registration that survives service restart and resets between Play sessions.

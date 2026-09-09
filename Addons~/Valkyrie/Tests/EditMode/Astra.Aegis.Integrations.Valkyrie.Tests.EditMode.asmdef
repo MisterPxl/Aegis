@@ -22,7 +22,7 @@
   "versionDefines": [
     {
       "name": "com.misterpxl.valkyrie",
-      "expression": "[2.0.0,3.0.0)",
+      "expression": "[2.1.0,3.0.0)",
       "define": "AEGIS_VALKYRIE_AVAILABLE"
     },
     {
