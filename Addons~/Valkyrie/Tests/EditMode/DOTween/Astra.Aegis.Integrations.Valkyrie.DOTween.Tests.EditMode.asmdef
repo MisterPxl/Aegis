@@ -1,0 +1,51 @@
+{
+    "name": "Astra.Aegis.Integrations.Valkyrie.DOTween.Tests.EditMode",
+    "rootNamespace": "Astra.Aegis.Integrations.Valkyrie.DOTween.Tests",
+    "references": [
+        "Astra.Aegis.Editor",
+        "Astra.Aegis.Integrations.Valkyrie.Editor",
+        "Astra.Aegis.Integrations.Valkyrie.DOTween.Editor",
+        "Astra.Valkyrie.Annotations",
+        "Astra.Valkyrie.Editor",
+        "Astra.Valkyrie.Integrations.DOTween.Runtime",
+        "Astra.Valkyrie.Integrations.DOTween.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTween.dll",
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS",
+        "AEGIS_VALKYRIE_AVAILABLE",
+        "AEGIS_VALKYRIE_DOTWEEN_AVAILABLE",
+        "ASTRA_AEGIS_V1"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.misterpxl.valkyrie",
+            "expression": "[2.0.0,3.0.0)",
+            "define": "AEGIS_VALKYRIE_AVAILABLE"
+        },
+        {
+            "name": "com.misterpxl.valkyrie.dotween",
+            "expression": "[3.0.0,4.0.0)",
+            "define": "AEGIS_VALKYRIE_DOTWEEN_AVAILABLE"
+        },
+        {
+            "name": "com.misterpxl.aegis",
+            "expression": "[1.0.0,2.0.0)",
+            "define": "ASTRA_AEGIS_V1"
+        }
+    ],
+    "noEngineReferences": false,
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}

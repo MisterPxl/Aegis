@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Add the optional Tween Configuration Rule for Valkyrie DOTween: pre-build detection of
+  missing/mistyped bindings, invalid steps, empty sequences and stale step event bindings,
+  without building tweens; runtime-provided bindings are distinguished from invalid
+  configurations. Compiled only when `com.misterpxl.valkyrie.dotween` 3.x is installed.
+
 ## 2.0.0 — Valkyrie 2.x migration candidate (unreleased)
 
 - Reference Astra Valkyrie annotations and Editor APIs; constrain this integration to Valkyrie 2.x.

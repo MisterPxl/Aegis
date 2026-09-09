@@ -14,6 +14,18 @@ Adds Aegis rules for:
 
 - missing values on fields marked with Valkyrie `[Required]`;
 - null or unresolved managed references in polymorphic collections.
+- with the optional **Valkyrie DOTween integration** installed: `TweenPlayer` and
+  `TweenSequenceAsset` configurations that cannot play as authored — missing or
+  mistyped target bindings, invalid step values, empty sequences and step event
+  bindings pointing at removed steps. The rule reuses the integration's editor
+  validation and never builds or plays a tween. A binding declared without a target
+  is reported as *runtime-provided* (Info by default) instead of an error, so
+  targets bound from code are not flagged. Create the rule asset from
+  `Astra/Aegis/Valkyrie/Tween Configuration Rule`; finding codes are
+  `Aegis.Valkyrie.DOTween.<TweenDiagnosticCode>`, `Aegis.Valkyrie.DOTween.RuntimeBinding`
+  and `Aegis.Valkyrie.DOTween.StaleStepEvent`. The assembly compiles only when
+  `com.misterpxl.valkyrie.dotween` 3.x and DOTween are present; Aegis, Valkyrie and
+  their integration stay usable without it.
 
 This integration does not replace Valkyrie's global inspector.
 
