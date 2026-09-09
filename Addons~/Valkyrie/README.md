@@ -31,6 +31,21 @@ This integration does not replace Valkyrie's global inspector.
 
 For local development and validation, copy each package into its own `Packages/<package-id>` directory in an isolated consumer and remove its `file:` manifest override. Local external packages can compile while Unity fails to associate their `MonoScript` assets with their types; asset save/reimport tests must also pass. Do not register an integration physically nested inside its base package.
 
+## Findings in the Valkyrie inspector
+
+With both packages installed, every Valkyrie inspector shows an Aegis line: the number of
+findings known for the selected object, whether they come from the last saved Aegis report
+or from a targeted validation, and their age. `Validate` runs all discovered rules on the
+asset, prefab or scene that owns the selection (suppressions applied, project report left
+untouched) and caches the result per object; `Dashboard` opens Project Health. Findings are
+drawn under the field they concern; findings without a matching field are listed at the
+bottom with a `Locate` button. The cache is invalidated when the object is modified, when
+assets are imported, when a newer project report is saved and on play mode changes, so the
+inspector never scans the project on repaint. Disable with the
+`Astra.Aegis.Integrations.Valkyrie.InspectorFindings` editor preference
+(`AegisValkyrieInspectorExtension.Enabled`). Unsaved scenes and prefab instances must be
+saved before a targeted validation.
+
 ## Prerequisites and tests
 
 The manifest declares these package versions:

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Show Aegis findings inside the Valkyrie inspector through the Valkyrie composition point:
+  per-object summary with provenance and age, help boxes under the concerned fields, unattached
+  findings with `Locate`, targeted validation of the owning asset/scene, cached and invalidated on
+  modification, import, newer report and play mode changes.
 - Add the optional Tween Configuration Rule for Valkyrie DOTween: pre-build detection of
   missing/mistyped bindings, invalid steps, empty sequences and stale step event bindings,
   without building tweens; runtime-provided bindings are distinguished from invalid
